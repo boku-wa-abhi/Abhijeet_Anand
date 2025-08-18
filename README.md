@@ -1,6 +1,6 @@
 # Abhijeet Anand - Interactive Portfolio
 
-🌐 **Live Website**: [https://portfolio-roan-eta-47.vercel.app/](https://portfolio-roan-eta-47.vercel.app/)
+🌐 **Live Website**: [https://abhijeet-anand.vercel.app/](https://abhijeet-anand.vercel.app/)
 
 🎨 A modern, interactive portfolio website for Abhijeet Anand, showcasing his skills as a Data Scientist & Analytics Expert.
 
@@ -37,13 +37,13 @@
 - Smooth modal animations
 - Accessibility-friendly focus management
 
-#### 💼 Projects Gallery
-- Interactive project cards with hover effects
-- Detailed project modals with:
-  - Project descriptions
-  - Technologies used
-  - Key features
-  - Challenges and solutions
+#### 💼 Work Experience
+- Interactive experience cards with hover effects
+- Detailed experience modals with:
+  - Role descriptions
+  - Technologies and tools used
+  - Key achievements
+  - Data science projects and solutions
 - Staggered animations on scroll
 
 #### 📄 Resume Section
@@ -116,7 +116,7 @@ portfolio/
 ### Modals
 - **About Modal**: Click "Get to know me" button
 - **Contact Modal**: Click "Send Message" button
-- **Project Details**: Click on any project card
+- **Experience Details**: Click on any experience card
 - **Resume Preview**: Click "Quick View" in resume section
 
 ### Animations
@@ -141,7 +141,7 @@ The portfolio uses CSS custom properties for easy theme customization:
 
 ### Content
 - **Personal Information**: Update in `index.html`
-- **Projects**: Modify project data in `script.js` (`getProjectData` function)
+- **Work Experience**: Modify experience data in `script.js` (`getExperienceData` function)
 - **Social Links**: Update URLs in `getSocialLink` function
 - **Resume**: Replace placeholder with actual resume file
 
