@@ -237,6 +237,9 @@ class TerminalPortfolio {
         this.setupLandingPage();
         this.commandInput.focus();
         
+        // Initialize cursor position
+        setTimeout(() => this.updateCursorPosition(), 100);
+        
         // Initialize ASCII art in welcome section after a short delay
         setTimeout(() => {
             this.initWelcomeSection();
