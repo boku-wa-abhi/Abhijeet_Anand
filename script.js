@@ -643,8 +643,8 @@ class TerminalPortfolio {
             }
         ];
         
-        this.addOutput('Work Experience Portfolio:', 'help-title');
-        this.addOutput('', '');
+        const asciiHeader = this.generateAsciiArt('EXPERIENCE');
+        this.typeText(asciiHeader, 'ascii-art');
         
         workExperience.forEach((experience, index) => {
             setTimeout(() => {
@@ -664,8 +664,8 @@ class TerminalPortfolio {
                         `).join('')}
                     </div>
                 </div>`;
-                this.addOutput(experienceHtml, 'work-experience-section');
-            }, index * 800);
+                this.typeText(experienceHtml, 'work-experience-section');
+            }, index * 1200 + 1000);
         });
         
         setTimeout(() => {
