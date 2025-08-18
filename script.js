@@ -761,21 +761,21 @@ class TerminalPortfolio {
     <p>I'm always interested in new opportunities and collaborations!</p>
     <br>
     <div class="contact-links">
-        <a href="mailto:jolina.javier@email.com" class="contact-link">
-            <i class="fas fa-envelope"></i> jolina.javier@email.com
+        <a href="mailto:abhijeet.anand@email.com" class="contact-link">
+            <i class="fas fa-envelope"></i> abhijeet.anand@email.com
         </a>
-        <a href="https://linkedin.com/in/jolina-javier" target="_blank" class="contact-link">
+        <a href="https://linkedin.com/in/abhijeet-anand" target="_blank" class="contact-link">
             <i class="fab fa-linkedin"></i> LinkedIn Profile
         </a>
-        <a href="https://wantedly.com/users/jolina-javier" target="_blank" class="contact-link">
+        <a href="https://wantedly.com/users/abhijeet-anand" target="_blank" class="contact-link">
             <i class="fas fa-briefcase"></i> Wantedly Profile
         </a>
-        <a href="https://github.com/jolina-javier" target="_blank" class="contact-link">
+        <a href="https://github.com/abhijeet-anand" target="_blank" class="contact-link">
             <i class="fab fa-github"></i> GitHub Profile
         </a>
     </div>
     <br>
-    <p><span class="highlight">Available for:</span> UI/UX Design projects, Front-End Development, Freelance work, and Full-time opportunities.</p>
+    <p><span class="highlight">Available for:</span> Data Science projects, Analytics consulting, Freelance work, and Full-time opportunities.</p>
     <br>
     <p><span class="highlight">Response time:</span> I typically respond within 24 hours.</p>
 </div>`;
@@ -788,7 +788,7 @@ class TerminalPortfolio {
     }
     
     whoami() {
-        this.addOutput('jolina', 'info');
+        this.addOutput('abhijeet', 'info');
     }
     
     listDirectory() {
@@ -810,7 +810,7 @@ class TerminalPortfolio {
     }
     
     printWorkingDirectory() {
-        this.addOutput(`/home/jolina${this.currentPath}`, 'info');
+        this.addOutput(`/home/abhijeet${this.currentPath}`, 'info');
     }
     
     showDate() {

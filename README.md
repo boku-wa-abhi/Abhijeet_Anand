@@ -1,8 +1,8 @@
-# Jolina Javier - Interactive Portfolio
+# Abhijeet Anand - Interactive Portfolio
 
 🌐 **Live Website**: [https://portfolio-roan-eta-47.vercel.app/](https://portfolio-roan-eta-47.vercel.app/)
 
-🎨 A modern, interactive portfolio website for Jolina Javier, showcasing her skills as a UI/UX Designer and Front-End Developer.
+🎨 A modern, interactive portfolio website for Abhijeet Anand, showcasing his skills as a Data Scientist & Analytics Expert.
 
 ## ✨ Features
 
@@ -169,7 +169,7 @@ The portfolio uses CSS custom properties for easy theme customization:
 
 ## 📄 License
 
-This project is created for Jolina Javier's personal portfolio. Feel free to use as inspiration for your own portfolio projects.
+This project is created for Abhijeet Anand's personal portfolio. Feel free to use as inspiration for your own portfolio projects.
 
 ## 🤝 Contributing
 
@@ -181,15 +181,15 @@ This is a personal portfolio project. If you find bugs or have suggestions for i
 
 ## 📞 Contact
 
-For questions about this portfolio or to get in touch with Jolina:
+For questions about this portfolio or to get in touch with Abhijeet:
 
-- **Email**: jolina.javier@email.com
-- **LinkedIn**: [Jolina Javier](https://linkedin.com/in/jolina-javier)
-- **GitHub**: [jolina-javier](https://github.com/jolina-javier)
-- **Wantedly**: [Jolina Javier](https://wantedly.com/users/jolina-javier)
+- **Email**: abhijeet.anand@email.com
+- **LinkedIn**: [Abhijeet Anand](https://linkedin.com/in/abhijeet-anand)
+- **GitHub**: [abhijeet-anand](https://github.com/abhijeet-anand)
+- **Wantedly**: [Abhijeet Anand](https://wantedly.com/users/abhijeet-anand)
 
 ---
 
-**Built with ❤️ by Jolina Javier**
+**Built with ❤️ by Abhijeet Anand**
 
 *Designed and developed with modern web technologies and a focus on user experience.*
