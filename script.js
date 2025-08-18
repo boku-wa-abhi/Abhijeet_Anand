@@ -476,10 +476,14 @@ class TerminalPortfolio {
                 currentHTML += text[i];
                 // Update innerHTML to render HTML properly
                 div.innerHTML = currentHTML;
-                this.scrollToBottom();
+                // Scroll every few characters for smoother experience
+                if (i % 5 === 0 || i >= text.length - 1) {
+                    this.scrollToBottom();
+                }
                 i++;
                 if (i >= text.length) {
                     clearInterval(typeInterval);
+                    this.scrollToBottom();
                 }
             }, delay);
         } else {
@@ -487,10 +491,14 @@ class TerminalPortfolio {
             let i = 0;
             const typeInterval = setInterval(() => {
                 div.textContent += text[i];
-                this.scrollToBottom();
+                // Scroll every few characters for smoother experience
+                if (i % 5 === 0 || i >= text.length - 1) {
+                    this.scrollToBottom();
+                }
                 i++;
                 if (i >= text.length) {
                     clearInterval(typeInterval);
+                    this.scrollToBottom();
                 }
             }, delay);
         }
