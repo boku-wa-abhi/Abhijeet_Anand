@@ -337,20 +337,22 @@ class TerminalPortfolio {
     }
     
     updateCursorPosition() {
-        if (this.cursor) {
-            const inputValue = this.commandInput.value;
-            const inputRect = this.commandInput.getBoundingClientRect();
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            const computedStyle = window.getComputedStyle(this.commandInput);
-            
-            context.font = `${computedStyle.fontSize} ${computedStyle.fontFamily}`;
-            const textWidth = context.measureText(inputValue).width;
-            
-            // Position cursor after the text
-            this.cursor.style.left = `${inputRect.left + textWidth + 8}px`;
-        }
-    }
+         if (this.cursor) {
+             const inputValue = this.commandInput.value;
+             const prompt = document.querySelector('.prompt');
+             const promptRect = prompt.getBoundingClientRect();
+             const canvas = document.createElement('canvas');
+             const context = canvas.getContext('2d');
+             const computedStyle = window.getComputedStyle(this.commandInput);
+             
+             context.font = `${computedStyle.fontSize} ${computedStyle.fontFamily}`;
+             const textWidth = context.measureText(inputValue).width;
+             
+             // Position cursor after the prompt and typed text
+             this.cursor.style.left = `${promptRect.right + textWidth + 2}px`;
+             this.cursor.style.top = `${promptRect.top}px`;
+         }
+     }
     
     handleKeyDown(e) {
         // Update cursor position when typing
