@@ -717,8 +717,7 @@ class TerminalPortfolio {
     }
     
     showResume() {
-        this.addOutput('Resume Downloads:', 'help-title');
-        this.addOutput('', '');
+        this.typeText('Resume Downloads:', 'help-title');
         
         const resumeText = `
 <div class="resume-section">
@@ -741,12 +740,9 @@ class TerminalPortfolio {
     </div>
 </div>`;
         
-        this.addOutput(resumeText, 'resume-section');
-        
         setTimeout(() => {
-            this.addOutput('', '');
-            this.typeText('💡 Six years of experience in Python, R, and machine learning!', 'info', 40);
-        }, 500);
+            this.typeText(resumeText, 'resume-section');
+        }, 300);
     }
     
     showContact() {
