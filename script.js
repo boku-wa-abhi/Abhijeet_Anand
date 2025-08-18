@@ -369,18 +369,48 @@ class TerminalPortfolio {
         // Display command
         this.addOutput(`abhijeet@portfolio:${this.currentPath}$ ${input}`, 'command-line');
         
-        // Parse and execute command
-        const [command, ...args] = input.split(' ');
+        // Check for exact command match first (for multi-word commands)
+        let commandFound = false;
+        let commandToExecute = null;
+        let argsToPass = [];
         
-        if (this.commands[command]) {
+        // Check if the entire input matches a command
+        if (this.commands[input]) {
+            commandToExecute = this.commands[input];
+            commandFound = true;
+        } else {
+            // Check for partial matches (multi-word commands)
+            const commandKeys = Object.keys(this.commands).sort((a, b) => b.length - a.length); // Sort by length desc
+            for (const cmd of commandKeys) {
+                if (input.startsWith(cmd)) {
+                    const remainingInput = input.substring(cmd.length).trim();
+                    commandToExecute = this.commands[cmd];
+                    argsToPass = remainingInput ? remainingInput.split(' ') : [];
+                    commandFound = true;
+                    break;
+                }
+            }
+        }
+        
+        // If no multi-word command found, try single word parsing
+        if (!commandFound) {
+            const [command, ...args] = input.split(' ');
+            if (this.commands[command]) {
+                commandToExecute = this.commands[command];
+                argsToPass = args;
+                commandFound = true;
+            }
+        }
+        
+        if (commandFound && commandToExecute) {
             // Stop ASCII animation when help is typed
-            if (command === 'help') {
+            if (input === 'help' || input.startsWith('help')) {
                 this.helpTyped = true;
                 this.stopAsciiAnimation();
             }
-            this.commands[command](args);
+            commandToExecute(argsToPass);
         } else {
-            this.addOutput(`Command not found: ${command}. Type 'help' for available commands.`, 'error');
+            this.addOutput(`Command not found: ${input}. Type 'help' for available commands.`, 'error');
         }
         
         // Clear input
