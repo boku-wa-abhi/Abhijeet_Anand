@@ -664,50 +664,46 @@ class TerminalPortfolio {
     
     showEducation() {
         // Indian Statistical Institute
-        setTimeout(() => {
-            const isiDegree = `
-                <div class="education-entry">
-                    <div class="education-header">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
-                        <strong>Indian Statistical Institute — Kolkata, India</strong>
-                        <span class="education-date">2018-2020</span>
-                    </div>
-                    <div class="education-role">
-                        <strong>Degree:</strong> Post Graduate Diploma in Applied Statistics
-                    </div>
-                    <div class="education-achievements">
-                        <div class="achievement-item">✅ Advanced Statistical Methods and Data Analysis</div>
-                        <div class="achievement-item">✅ Machine Learning and Predictive Modeling</div>
-                        <div class="achievement-item">✅ Research Methodology and Statistical Computing</div>
-                        <div class="achievement-item">✅ Probability Theory and Mathematical Statistics</div>
-                        <div class="achievement-item">✅ Applied Statistics in Real-world Scenarios</div>
-                    </div>
-                </div>`;
-            this.typeText(isiDegree, 'education-section');
-        }, 300);
+        const isiDegree = `
+            <div class="education-entry">
+                <div class="education-header">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
+                    <strong>Indian Statistical Institute — Kolkata, India</strong>
+                    <span class="education-date">2018-2020</span>
+                </div>
+                <div class="education-role">
+                    <strong>Degree:</strong> Post Graduate Diploma in Applied Statistics
+                </div>
+                <div class="education-achievements">
+                    <div class="achievement-item">✅ Advanced Statistical Methods and Data Analysis</div>
+                    <div class="achievement-item">✅ Machine Learning and Predictive Modeling</div>
+                    <div class="achievement-item">✅ Research Methodology and Statistical Computing</div>
+                    <div class="achievement-item">✅ Probability Theory and Mathematical Statistics</div>
+                    <div class="achievement-item">✅ Applied Statistics in Real-world Scenarios</div>
+                </div>
+            </div>`;
+        this.typeText(isiDegree, 'education-section');
         
         // Indian Institute of Technology
-        setTimeout(() => {
-            const iitDegree = `
-                <div class="education-entry">
-                    <div class="education-header">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
-                        <strong>Indian Institute of Technology — Bombay, India</strong>
-                        <span class="education-date">Jan 2017</span>
-                    </div>
-                    <div class="education-role">
-                        <strong>Degree:</strong> Bachelor of Technology
-                    </div>
-                    <div class="education-achievements">
-                        <div class="achievement-item">✅ Engineering Fundamentals and Technical Problem Solving</div>
-                        <div class="achievement-item">✅ Mathematics and Computational Methods</div>
-                        <div class="achievement-item">✅ Data Structures and Algorithm Design</div>
-                        <div class="achievement-item">✅ Software Development and Programming</div>
-                        <div class="achievement-item">✅ Research and Innovation Projects</div>
-                    </div>
-                </div>`;
-            this.typeText(iitDegree, 'education-section');
-        }, 1200);
+        const iitDegree = `
+            <div class="education-entry">
+                <div class="education-header">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
+                    <strong>Indian Institute of Technology — Bombay, India</strong>
+                    <span class="education-date">Jan 2017</span>
+                </div>
+                <div class="education-role">
+                    <strong>Degree:</strong> Bachelor of Technology
+                </div>
+                <div class="education-achievements">
+                    <div class="achievement-item">✅ Engineering Fundamentals and Technical Problem Solving</div>
+                    <div class="achievement-item">✅ Mathematics and Computational Methods</div>
+                    <div class="achievement-item">✅ Data Structures and Algorithm Design</div>
+                    <div class="achievement-item">✅ Software Development and Programming</div>
+                    <div class="achievement-item">✅ Research and Innovation Projects</div>
+                </div>
+            </div>`;
+        this.typeText(iitDegree, 'education-section');
         
 
     }
