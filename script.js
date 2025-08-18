@@ -732,9 +732,7 @@ class TerminalPortfolio {
     </div>
 </div>`;
         
-        setTimeout(() => {
-            this.typeText(resumeText, 'resume-section');
-        }, 300);
+        this.typeText(resumeText, 'resume-section');
     }
     
     showContact() {
