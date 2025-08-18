@@ -271,8 +271,8 @@ class TerminalPortfolio {
     }
     
     startTypewriterAnimation() {
-        const text1 = "Hi! I'm Jolina Javier, a passionate UI/UX Designer and Front-End Developer.";
-        const text2 = "I enjoy creating intuitive and user-friendly digital experiences.";
+        const text1 = "Hi Dear! I'm Abhijeet Anand, a passionate Data Scientist & Analytics Expert.";
+        const text2 = "I specialize in Python and R with six years of experience across diverse sectors.";
         
         const typewriter1 = document.getElementById('typewriter1');
         const typewriter2 = document.getElementById('typewriter2');
