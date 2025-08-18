@@ -232,13 +232,8 @@ class TerminalPortfolio {
     
     init() {
         this.commandInput.addEventListener('keydown', this.handleKeyDown.bind(this));
-        this.commandInput.addEventListener('input', (e) => this.updateCursorPosition());
-        this.commandInput.addEventListener('keyup', (e) => this.updateCursorPosition());
         this.setupLandingPage();
         this.commandInput.focus();
-        
-        // Initialize cursor position
-        setTimeout(() => this.updateCursorPosition(), 100);
         
         // Initialize ASCII art in welcome section after a short delay
         setTimeout(() => {
@@ -339,28 +334,13 @@ class TerminalPortfolio {
         }
     }
     
-    updateCursorPosition() {
-         if (this.cursor) {
-             const inputValue = this.commandInput.value;
-             const prompt = document.querySelector('.prompt');
-             const promptRect = prompt.getBoundingClientRect();
-             const canvas = document.createElement('canvas');
-             const context = canvas.getContext('2d');
-             const computedStyle = window.getComputedStyle(this.commandInput);
-             
-             context.font = `${computedStyle.fontSize} ${computedStyle.fontFamily}`;
-             const textWidth = context.measureText(inputValue).width;
-             
-             // Position cursor after the prompt and typed text
-             this.cursor.style.left = `${promptRect.right + textWidth + 2}px`;
-             this.cursor.style.top = `${promptRect.top}px`;
-         }
-     }
-    
     handleKeyDown(e) {
-        // Update cursor position when typing
+        // Hide cursor when typing
         if (this.cursor && e.key.length === 1) {
-            setTimeout(() => this.updateCursorPosition(), 0);
+            this.cursor.style.visibility = 'hidden';
+            setTimeout(() => {
+                if (this.cursor) this.cursor.style.visibility = 'visible';
+            }, 500);
         }
         
         switch(e.key) {

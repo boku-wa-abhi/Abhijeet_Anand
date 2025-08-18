@@ -189,8 +189,7 @@ body {
     color: #00ff00;
     animation: blink 1s infinite;
     pointer-events: none;
-    position: absolute;
-    z-index: 10;
+    margin-left: 2px;
 }
 
 @keyframes blink {
