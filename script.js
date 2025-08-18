@@ -605,7 +605,7 @@ class TerminalPortfolio {
             </div>
         </div>`;
         
-        this.addOutput(skillsHtml, 'skills-content');
+        this.typeText(skillsHtml, 'skills-content');
     }
     
     showProjects() {
