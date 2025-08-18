@@ -430,8 +430,11 @@ class TerminalPortfolio {
             this.addOutput(`Command not found: ${input}. Type 'help' for available commands.`, 'error');
         }
         
-        // Clear input
+        // Clear input and typed text
         this.commandInput.value = '';
+        if (this.typedText) {
+            this.typedText.textContent = '';
+        }
         
         // Scroll to bottom
         this.scrollToBottom();
