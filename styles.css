@@ -143,6 +143,12 @@ body {
     line-height: 1.2;
     text-align: center;
     overflow: visible;
+    transition: opacity 0.3s ease-in-out;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .welcome-message p {

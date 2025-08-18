@@ -182,8 +182,12 @@ class TerminalPortfolio {
         const animateOnce = () => {
             if (!this.asciiAnimationActive) return;
             
-            const lines = text.split('\n');
+            // Generate ASCII art for the text
+            const asciiArt = this.generateAsciiArt(text);
+            const lines = asciiArt.split('\n');
             let currentLine = 0;
+            
+            // Clear the element and start fresh
             element.innerHTML = '';
             element.classList.add('typing');
             
@@ -198,19 +202,28 @@ class TerminalPortfolio {
                     element.innerHTML += lines[currentLine];
                     currentLine++;
                     
-                    // Schedule next line
-                    this.currentAsciiTimeout = setTimeout(animateNextLine, 200);
+                    // Schedule next line with typewriter effect
+                    this.currentAsciiTimeout = setTimeout(animateNextLine, 150);
                 } else {
-                    // Animation complete
+                    // Animation complete - pause briefly
                     element.classList.remove('typing');
                     element.classList.add('finished');
                     
-                    // Loop the animation continuously until 'help' is typed
+                    // Clear screen and restart animation loop
                     this.currentAsciiTimeout = setTimeout(() => {
                         if (this.asciiAnimationActive && !this.helpTyped) {
-                            animateOnce();
+                            // Clear the screen with fade effect
+                            element.style.opacity = '0';
+                            setTimeout(() => {
+                                if (this.asciiAnimationActive) {
+                                    element.innerHTML = '';
+                                    element.style.opacity = '1';
+                                    element.classList.remove('finished');
+                                    animateOnce(); // Restart the loop
+                                }
+                            }, 300);
                         }
-                    }, 2000);
+                    }, 2500); // Pause for 2.5 seconds before clearing
                 }
             };
             
