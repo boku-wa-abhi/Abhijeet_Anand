@@ -10,6 +10,10 @@
 - **Custom Cursor**: Dynamic cursor that responds to hover states
 - **Loading Animation**: Elegant loading screen with progress bar
 - **Smooth Scrolling**: Seamless navigation between sections
+- **Window Controls**: Terminal-style window controls with functional buttons:
+  - Red button: Close page functionality
+  - Yellow button: Minimize terminal interface
+  - Green button: Toggle maximize/minimize terminal
 - **Micro-interactions**: Hover effects, button animations, and transitions
 
 ### 🎨 Design & Animations
