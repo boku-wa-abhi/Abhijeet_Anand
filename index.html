@@ -36,8 +36,8 @@
     <div class="terminal-container">
         <div class="terminal-header">
             <div class="window-controls">
-                <span class="red" onclick="window.close()" title="Close Page"></span>
-                <span class="yellow" onclick="document.querySelector('.terminal-container').style.display='none'" title="Minimize Terminal"></span>
+                <span class="red" onclick="window.close(); if(!window.closed) { window.location.href = 'about:blank'; }" title="Close Page"></span>
+                <span class="yellow" onclick="document.body.style.visibility='hidden'; setTimeout(() => { if(confirm('Tab minimized. Click OK to restore.')) { document.body.style.visibility='visible'; } }, 100);" title="Minimize Tab"></span>
                 <span class="green"></span>
             </div>
             <div class="terminal-title">abhijeet@portfolio:~$</div>
