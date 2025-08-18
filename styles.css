@@ -49,11 +49,11 @@ body {
 }
 
 .terminal-container.maximized .welcome-message {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .terminal-container.maximized .welcome-message p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 80px;
 }
 
 .terminal-container.maximized .terminal-body {
@@ -65,7 +65,7 @@ body {
 }
 
 .terminal-container.maximized .input-line {
-    margin-top: 150px;
+    margin-top: 0;
     position: static;
 }
 
