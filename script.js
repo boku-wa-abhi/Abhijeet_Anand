@@ -450,10 +450,16 @@ class TerminalPortfolio {
         } else if (this.historyIndex >= this.commandHistory.length) {
             this.historyIndex = this.commandHistory.length;
             this.commandInput.value = '';
+            if (this.typedText) {
+                this.typedText.textContent = '';
+            }
             return;
         }
         
         this.commandInput.value = this.commandHistory[this.historyIndex] || '';
+        if (this.typedText) {
+            this.typedText.textContent = this.commandHistory[this.historyIndex] || '';
+        }
     }
     
     autoComplete() {
