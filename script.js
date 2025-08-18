@@ -367,7 +367,7 @@ class TerminalPortfolio {
         this.historyIndex = this.commandHistory.length;
         
         // Display command
-        this.addOutput(`jolina@portfolio:${this.currentPath}$ ${input}`, 'command-line');
+        this.addOutput(`abhijeet@portfolio:${this.currentPath}$ ${input}`, 'command-line');
         
         // Parse and execute command
         const [command, ...args] = input.split(' ');
@@ -470,11 +470,11 @@ class TerminalPortfolio {
     <div class="help-title">Available Commands:</div>
     <div class="help-commands">
         <div class="help-command"><span class="command-name">help</span> - Show this help message</div>
-        <div class="help-command"><span class="command-name">about</span> - Learn more about Jolina</div>
+        <div class="help-command"><span class="command-name">about</span> - Learn more about Abhijeet</div>
         <div class="help-command"><span class="command-name">skills</span> - View technical skills and tools</div>
-        <div class="help-command"><span class="command-name">projects</span> - Browse portfolio projects</div>
+        <div class="help-command"><span class="command-name">work experience</span> - Browse work experience</div>
         <div class="help-command"><span class="command-name">education</span> - View educational background</div>
-        <div class="help-command"><span class="command-name">resume</span> - Download resume (UI/UX or Front-End)</div>
+        <div class="help-command"><span class="command-name">resume</span> - Download resume (Data Scientist)</div>
         <div class="help-command"><span class="command-name">contact</span> - Get contact information</div>
         <div class="help-command"><span class="command-name">clear</span> - Clear the terminal</div>
         <div class="help-command"><span class="command-name">whoami</span> - Display current user</div>
