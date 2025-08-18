@@ -189,10 +189,8 @@ body {
 .cursor-blink {
     color: #00ff00;
     animation: blink 1s infinite;
-    position: absolute;
-    left: calc(100% + 2px);
+    margin-left: 2px;
     pointer-events: none;
-    transform: translateX(-100%);
 }
 
 @keyframes blink {
