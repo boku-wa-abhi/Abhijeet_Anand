@@ -13,13 +13,12 @@ class TerminalPortfolio {
         this.commands = {
             help: this.showHelp.bind(this),
             about: this.showAbout.bind(this),
-            experience: this.showProjects.bind(this),
-            education: this.showEducation.bind(this),
-            projects: this.showProjects.bind(this),
-            contact: this.showContact.bind(this),
             skills: this.showSkills.bind(this),
             'work experience': this.showProjects.bind(this),
+            projects: this.showProjects.bind(this),
+            education: this.showEducation.bind(this),
             resume: this.showResume.bind(this),
+            contact: this.showContact.bind(this),
             clear: this.clearTerminal.bind(this),
             whoami: this.whoami.bind(this),
             ls: this.listDirectory.bind(this),
@@ -364,7 +363,7 @@ class TerminalPortfolio {
         this.historyIndex = this.commandHistory.length;
         
         // Display command
-        this.typeText(`abhijeet@portfolio:${this.currentPath}$ ${input}`, 'command-line');
+        this.addOutput(`abhijeet@portfolio:${this.currentPath}$ ${input}`, 'command-line');
         
         // Check for exact command match first (for multi-word commands)
         let commandFound = false;
@@ -407,7 +406,7 @@ class TerminalPortfolio {
             }
             commandToExecute(argsToPass);
         } else {
-            this.typeText(`Command not found: ${input}. Type 'help' for available commands.`, 'error');
+            this.addOutput(`Command not found: ${input}. Type 'help' for available commands.`, 'error');
         }
         
         // Clear input
@@ -440,7 +439,7 @@ class TerminalPortfolio {
         if (matches.length === 1) {
             this.commandInput.value = matches[0];
         } else if (matches.length > 1) {
-            this.typeText(`Available commands: ${matches.join(', ')}`, 'info');
+            this.addOutput(`Available commands: ${matches.join(', ')}`, 'info');
         }
     }
     
@@ -449,7 +448,6 @@ class TerminalPortfolio {
         div.className = `command-output ${className}`;
         div.innerHTML = text;
         this.output.appendChild(div);
-        this.scrollToBottom();
     }
     
     typeText(text, className = '', delay = 50) {
@@ -468,7 +466,6 @@ class TerminalPortfolio {
                 currentHTML += text[i];
                 // Update innerHTML to render HTML properly
                 div.innerHTML = currentHTML;
-                this.scrollToBottom();
                 i++;
                 if (i >= text.length) {
                     clearInterval(typeInterval);
@@ -479,7 +476,6 @@ class TerminalPortfolio {
             let i = 0;
             const typeInterval = setInterval(() => {
                 div.textContent += text[i];
-                this.scrollToBottom();
                 i++;
                 if (i >= text.length) {
                     clearInterval(typeInterval);
@@ -501,12 +497,11 @@ class TerminalPortfolio {
     <div class="help-commands">
         <div class="help-command"><span class="command-name">help</span> - Show this help message</div>
         <div class="help-command"><span class="command-name">about</span> - Learn more about Abhijeet</div>
-        <div class="help-command"><span class="command-name">experience</span> - Browse work experience</div>
-        <div class="help-command"><span class="command-name">education</span> - View educational background</div>
-        <div class="help-command"><span class="command-name">projects</span> - View projects and portfolio</div>
-        <div class="help-command"><span class="command-name">contact</span> - Get contact information with links</div>
         <div class="help-command"><span class="command-name">skills</span> - View technical skills and tools</div>
+        <div class="help-command"><span class="command-name">work experience</span> - Browse work experience</div>
+        <div class="help-command"><span class="command-name">education</span> - View educational background</div>
         <div class="help-command"><span class="command-name">resume</span> - Download resume (Data Scientist)</div>
+        <div class="help-command"><span class="command-name">contact</span> - Get contact information</div>
         <div class="help-command"><span class="command-name">clear</span> - Clear the terminal</div>
         <div class="help-command"><span class="command-name">whoami</span> - Display current user</div>
         <div class="help-command"><span class="command-name">ls</span> - List directory contents</div>
@@ -515,11 +510,15 @@ class TerminalPortfolio {
         <div class="help-command"><span class="command-name">echo</span> - Display a line of text</div>
     </div>
 </div>`;
-        this.typeText(helpText);
+        this.addOutput(helpText);
     }
     
     showAbout() {
-        const aboutContent = `
+        this.addOutput('About Me', 'help-title');
+        this.addOutput('', '');
+        
+        setTimeout(() => {
+            const aboutContent = `
                 <div class="about-section">
                     <div class="about-intro">
                         <p>Hi! I'm <strong>Abhijeet Anand</strong>, a <span class="highlight">Data Scientist</span> with six years of experience, specializing in Python and R.</p>
@@ -553,10 +552,11 @@ class TerminalPortfolio {
                     </div>
                     
                     <div class="about-cta">
-                        <p>💡 Type <span class="command-highlight">'experience'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
+                        <p>💡 Type <span class="command-highlight">'work experience'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
                     </div>
                 </div>`;
-        this.typeText(aboutContent, 'about-content');
+            this.addOutput(aboutContent, 'about-content');
+        }, 300);
     }
     
     showSkills() {
@@ -603,7 +603,7 @@ class TerminalPortfolio {
             </div>
         </div>`;
         
-        this.typeText(skillsHtml, 'skills-content');
+        this.addOutput(skillsHtml, 'skills-content');
     }
     
     showProjects() {
@@ -639,77 +639,96 @@ class TerminalPortfolio {
             }
         ];
         
+        this.addOutput('Work Experience Portfolio:', 'help-title');
+        this.addOutput('', '');
+        
         workExperience.forEach((experience, index) => {
-            const experienceHtml = `
-            <div class="work-experience-entry">
-                <div class="experience-header">
-                    <img src="${experience.icon}" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" onerror="this.src='https://img.icons8.com/ios-filled/50/000000/briefcase.png'" />
-                    <strong>${experience.company} — ${experience.location}</strong>
-                    <span class="experience-date">${experience.date}</span>
-                </div>
-                <div class="experience-role">
-                    <strong>Role:</strong> ${experience.role}
-                </div>
-                <div class="experience-achievements">
-                    ${experience.achievements.map(achievement => `
-                        <div class="achievement-item">✅ ${achievement}</div>
-                    `).join('')}
-                </div>
-            </div>`;
-            this.typeText(experienceHtml, 'work-experience-section');
+            setTimeout(() => {
+                const experienceHtml = `
+                <div class="work-experience-entry">
+                    <div class="experience-header">
+                        <img src="${experience.icon}" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" onerror="this.src='https://img.icons8.com/ios-filled/50/000000/briefcase.png'" />
+                        <strong>${experience.company} — ${experience.location}</strong>
+                        <span class="experience-date">${experience.date}</span>
+                    </div>
+                    <div class="experience-role">
+                        <strong>Role:</strong> ${experience.role}
+                    </div>
+                    <div class="experience-achievements">
+                        ${experience.achievements.map(achievement => `
+                            <div class="achievement-item">✅ ${achievement}</div>
+                        `).join('')}
+                    </div>
+                </div>`;
+                this.addOutput(experienceHtml, 'work-experience-section');
+            }, index * 800);
         });
         
-
+        setTimeout(() => {
+            this.addOutput('', '');
+            this.typeText('🚀 Proven track record of delivering impactful data science solutions across diverse industries!', 'info', 40);
+        }, workExperience.length * 800 + 500);
     }
     
     showEducation() {
+        this.addOutput('Education & Certifications:', 'help-title');
+        this.addOutput('', '');
+        
         // Indian Statistical Institute
-        const isiDegree = `
-            <div class="education-entry">
-                <div class="education-header">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
-                    <strong>Indian Statistical Institute — Kolkata, India</strong>
-                    <span class="education-date">2018-2020</span>
-                </div>
-                <div class="education-role">
-                    <strong>Degree:</strong> Post Graduate Diploma in Applied Statistics
-                </div>
-                <div class="education-achievements">
-                    <div class="achievement-item">✅ Advanced Statistical Methods and Data Analysis</div>
-                    <div class="achievement-item">✅ Machine Learning and Predictive Modeling</div>
-                    <div class="achievement-item">✅ Research Methodology and Statistical Computing</div>
-                    <div class="achievement-item">✅ Probability Theory and Mathematical Statistics</div>
-                    <div class="achievement-item">✅ Applied Statistics in Real-world Scenarios</div>
-                </div>
-            </div>`;
-        this.typeText(isiDegree, 'education-section');
+        setTimeout(() => {
+            const isiDegree = `
+                <div class="education-entry">
+                    <div class="education-header">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
+                        <strong>Indian Statistical Institute — Kolkata, India</strong>
+                        <span class="education-date">2018-2020</span>
+                    </div>
+                    <div class="education-role">
+                        <strong>Degree:</strong> Post Graduate Diploma in Applied Statistics
+                    </div>
+                    <div class="education-achievements">
+                        <div class="achievement-item">✅ Advanced Statistical Methods and Data Analysis</div>
+                        <div class="achievement-item">✅ Machine Learning and Predictive Modeling</div>
+                        <div class="achievement-item">✅ Research Methodology and Statistical Computing</div>
+                        <div class="achievement-item">✅ Probability Theory and Mathematical Statistics</div>
+                        <div class="achievement-item">✅ Applied Statistics in Real-world Scenarios</div>
+                    </div>
+                </div>`;
+            this.addOutput(isiDegree, 'education-section');
+        }, 300);
         
         // Indian Institute of Technology
-        const iitDegree = `
-            <div class="education-entry">
-                <div class="education-header">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
-                    <strong>Indian Institute of Technology — Bombay, India</strong>
-                    <span class="education-date">Jan 2017</span>
-                </div>
-                <div class="education-role">
-                    <strong>Degree:</strong> Bachelor of Technology
-                </div>
-                <div class="education-achievements">
-                    <div class="achievement-item">✅ Engineering Fundamentals and Technical Problem Solving</div>
-                    <div class="achievement-item">✅ Mathematics and Computational Methods</div>
-                    <div class="achievement-item">✅ Data Structures and Algorithm Design</div>
-                    <div class="achievement-item">✅ Software Development and Programming</div>
-                    <div class="achievement-item">✅ Research and Innovation Projects</div>
-                </div>
-            </div>`;
-        this.typeText(iitDegree, 'education-section');
+        setTimeout(() => {
+            const iitDegree = `
+                <div class="education-entry">
+                    <div class="education-header">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
+                        <strong>Indian Institute of Technology — Bombay, India</strong>
+                        <span class="education-date">Jan 2017</span>
+                    </div>
+                    <div class="education-role">
+                        <strong>Degree:</strong> Bachelor of Technology
+                    </div>
+                    <div class="education-achievements">
+                        <div class="achievement-item">✅ Engineering Fundamentals and Technical Problem Solving</div>
+                        <div class="achievement-item">✅ Mathematics and Computational Methods</div>
+                        <div class="achievement-item">✅ Data Structures and Algorithm Design</div>
+                        <div class="achievement-item">✅ Software Development and Programming</div>
+                        <div class="achievement-item">✅ Research and Innovation Projects</div>
+                    </div>
+                </div>`;
+            this.addOutput(iitDegree, 'education-section');
+        }, 1200);
         
-
+        setTimeout(() => {
+            this.addOutput('', '');
+            this.typeText('🎓 Strong foundation in statistics, technology, and data science!', 'info', 40);
+        }, 2100);
     }
     
     showResume() {
-        this.typeText('Resume Downloads:', 'help-title');
+        this.addOutput('Resume Downloads:', 'help-title');
+        this.addOutput('', '');
         
         const resumeText = `
 <div class="resume-section">
@@ -732,7 +751,12 @@ class TerminalPortfolio {
     </div>
 </div>`;
         
-        this.typeText(resumeText, 'resume-section');
+        this.addOutput(resumeText, 'resume-section');
+        
+        setTimeout(() => {
+            this.addOutput('', '');
+            this.typeText('💡 Six years of experience in Python, R, and machine learning!', 'info', 40);
+        }, 500);
     }
     
     showContact() {
@@ -758,16 +782,16 @@ class TerminalPortfolio {
         </a>
     </div>
 </div>`;
-        this.typeText(contactText);
+        this.addOutput(contactText);
     }
     
     clearTerminal() {
         this.output.innerHTML = '';
-        this.typeText('Terminal cleared.', 'success');
+        this.addOutput('Terminal cleared.', 'success');
     }
     
     whoami() {
-        this.typeText('abhijeet', 'info');
+        this.addOutput('abhijeet', 'info');
     }
     
     listDirectory() {
@@ -780,16 +804,16 @@ class TerminalPortfolio {
             'resume.pdf'
         ];
         
-        this.typeText('Directory contents:', 'info');
+        this.addOutput('Directory contents:', 'info');
         files.forEach(file => {
             const isDirectory = file.endsWith('/');
             const color = isDirectory ? 'info' : '';
-            this.typeText(`  ${file}`, color);
+            this.addOutput(`  ${file}`, color);
         });
     }
     
     printWorkingDirectory() {
-        this.typeText(`/home/abhijeet${this.currentPath}`, 'info');
+        this.addOutput(`/home/abhijeet${this.currentPath}`, 'info');
     }
     
     showDate() {
@@ -803,12 +827,12 @@ class TerminalPortfolio {
             minute: '2-digit',
             second: '2-digit'
         });
-        this.typeText(dateString, 'info');
+        this.addOutput(dateString, 'info');
     }
     
     echo(args) {
         const text = args.join(' ');
-        this.typeText(text || '', 'info');
+        this.addOutput(text || '', 'info');
     }
 }
 

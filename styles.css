@@ -170,14 +170,8 @@ body {
 
 .prompt {
     color: #00ff00;
-    margin-right: 0;
+    margin-right: 8px;
     font-weight: bold;
-}
-
-.input-container {
-    display: flex;
-    align-items: center;
-    flex: 1;
 }
 
 .command-input {
@@ -189,14 +183,13 @@ body {
     font-size: 14px;
     flex: 1;
     caret-color: transparent;
-    margin-left: 0;
-    min-width: 0;
 }
 
 .cursor-blink {
     color: #00ff00;
     animation: blink 1s infinite;
-    margin-left: 2px;
+    position: absolute;
+    right: -2px;
     pointer-events: none;
 }
 
