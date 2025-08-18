@@ -171,26 +171,52 @@ class TerminalPortfolio {
         const asciiArt = this.generateAsciiArt(text);
         const lines = asciiArt.split('\n');
         
-        // Clear the element and set up styling
-        element.innerHTML = '';
+        // Set up styling
         element.style.fontFamily = 'monospace';
         element.style.color = '#00FF00';
         element.style.whiteSpace = 'pre';
         element.style.textAlign = 'center';
         element.style.lineHeight = '1';
         element.style.fontSize = '12px';
+        element.style.transition = 'opacity 0.8s ease-in-out';
         
-        // Typewriter effect - display line by line
-        let currentLine = 0;
-        const typewriterInterval = setInterval(() => {
-            if (currentLine < lines.length) {
-                element.innerHTML += lines[currentLine] + '\n';
-                currentLine++;
-            } else {
-                clearInterval(typewriterInterval);
-                element.classList.add('finished');
-            }
-        }, 200); // 200ms delay between lines
+        // Animation loop function
+        const animationLoop = () => {
+            // Start with fade in
+            element.style.opacity = '0';
+            element.innerHTML = '';
+            
+            // Fade in effect
+            setTimeout(() => {
+                element.style.opacity = '1';
+                
+                // Typewriter effect - display line by line
+                let currentLine = 0;
+                const typewriterInterval = setInterval(() => {
+                    if (currentLine < lines.length) {
+                        element.innerHTML += lines[currentLine] + '\n';
+                        currentLine++;
+                    } else {
+                        clearInterval(typewriterInterval);
+                        element.classList.add('finished');
+                        
+                        // Hold the text for 3 seconds, then fade out
+                        setTimeout(() => {
+                            element.style.opacity = '0';
+                            element.classList.remove('finished');
+                            
+                            // Wait for fade out to complete, then restart
+                            setTimeout(() => {
+                                animationLoop();
+                            }, 800); // Wait for fade out transition
+                        }, 3000); // Hold text for 3 seconds
+                    }
+                }, 150); // 150ms delay between lines
+            }, 500); // Initial delay before fade in
+        };
+        
+        // Start the animation loop
+        animationLoop();
     }
     
     stopAsciiAnimation() {
