@@ -33,83 +33,11 @@ class TerminalPortfolio {
     generateAsciiArt(text) {
         // ASCII character mappings for block letters
         const asciiChars = {
-            'J': [
-                '     ██╗',
-                '     ██║',
-                '     ██║',
-                '██   ██║',
-                '╚█████╔╝',
-                ' ╚════╝ '
-            ],
-            'O': [
-                ' ██████╗ ',
-                '██╔═══██╗',
-                '██║   ██║',
-                '██║   ██║',
-                '╚██████╔╝',
-                ' ╚═════╝ '
-            ],
-            'L': [
-                '██╗     ',
-                '██║     ',
-                '██║     ',
-                '██║     ',
-                '███████╗',
-                '╚══════╝'
-            ],
-            'I': [
-                '██╗',
-                '██║',
-                '██║',
-                '██║',
-                '██║',
-                '╚═╝'
-            ],
-            'N': [
-                '███╗   ██╗',
-                '████╗  ██║',
-                '██╔██╗ ██║',
-                '██║╚██╗██║',
-                '██║ ╚████║',
-                '╚═╝  ╚═══╝'
-            ],
             'A': [
                 ' █████╗ ',
                 '██╔══██╗',
                 '███████║',
                 '██╔══██║',
-                '██║  ██║',
-                '╚═╝  ╚═╝'
-            ],
-            ' ': [
-                '      ',
-                '      ',
-                '      ',
-                '      ',
-                '      ',
-                '      '
-            ],
-            'V': [
-                '██╗   ██╗',
-                '██║   ██║',
-                '██║   ██║',
-                '╚██╗ ██╔╝',
-                ' ╚████╔╝ ',
-                '  ╚═══╝  '
-            ],
-            'E': [
-                '███████╗',
-                '██╔════╝',
-                '█████╗  ',
-                '██╔══╝  ',
-                '███████╗',
-                '╚══════╝'
-            ],
-            'R': [
-                '██████╗ ',
-                '██╔══██╗',
-                '██████╔╝',
-                '██╔══██╗',
                 '██║  ██║',
                 '╚═╝  ╚═╝'
             ],
@@ -121,11 +49,75 @@ class TerminalPortfolio {
                 '██████╔╝',
                 '╚═════╝ '
             ],
+            'D': [
+                '██████╗ ',
+                '██╔══██╗',
+                '██║  ██║',
+                '██║  ██║',
+                '██████╔╝',
+                '╚═════╝ '
+            ],
+            'E': [
+                '███████╗',
+                '██╔════╝',
+                '█████╗  ',
+                '██╔══╝  ',
+                '███████╗',
+                '╚══════╝'
+            ],
             'H': [
                 '██╗  ██╗',
                 '██║  ██║',
                 '███████║',
                 '██╔══██║',
+                '██║  ██║',
+                '╚═╝  ╚═╝'
+            ],
+            'I': [
+                '██╗',
+                '██║',
+                '██║',
+                '██║',
+                '██║',
+                '╚═╝'
+            ],
+            'J': [
+                '     ██╗',
+                '     ██║',
+                '     ██║',
+                '██   ██║',
+                '╚█████╔╝',
+                ' ╚════╝ '
+            ],
+            'L': [
+                '██╗     ',
+                '██║     ',
+                '██║     ',
+                '██║     ',
+                '███████╗',
+                '╚══════╝'
+            ],
+            'N': [
+                '███╗   ██╗',
+                '████╗  ██║',
+                '██╔██╗ ██║',
+                '██║╚██╗██║',
+                '██║ ╚████║',
+                '╚═╝  ╚═══╝'
+            ],
+            'O': [
+                ' ██████╗ ',
+                '██╔═══██╗',
+                '██║   ██║',
+                '██║   ██║',
+                '╚██████╔╝',
+                ' ╚═════╝ '
+            ],
+            'R': [
+                '██████╗ ',
+                '██╔══██╗',
+                '██████╔╝',
+                '██╔══██╗',
                 '██║  ██║',
                 '╚═╝  ╚═╝'
             ],
@@ -137,13 +129,13 @@ class TerminalPortfolio {
                 '   ██║   ',
                 '   ╚═╝   '
             ],
-            'D': [
-                '██████╗ ',
-                '██╔══██╗',
-                '██║  ██║',
-                '██║  ██║',
-                '██████╔╝',
-                '╚═════╝ '
+            ' ': [
+                '   ',
+                '   ',
+                '   ',
+                '   ',
+                '   ',
+                '   '
             ]
         };
         
@@ -177,10 +169,28 @@ class TerminalPortfolio {
     animateAsciiName(element, text) {
         // Generate ASCII art for the text
         const asciiArt = this.generateAsciiArt(text);
+        const lines = asciiArt.split('\n');
         
-        // Display the ASCII art immediately without animation
-        element.innerHTML = asciiArt;
-        element.classList.add('finished');
+        // Clear the element and set up styling
+        element.innerHTML = '';
+        element.style.fontFamily = 'monospace';
+        element.style.color = '#00FF00';
+        element.style.whiteSpace = 'pre';
+        element.style.textAlign = 'center';
+        element.style.lineHeight = '1';
+        element.style.fontSize = '12px';
+        
+        // Typewriter effect - display line by line
+        let currentLine = 0;
+        const typewriterInterval = setInterval(() => {
+            if (currentLine < lines.length) {
+                element.innerHTML += lines[currentLine] + '\n';
+                currentLine++;
+            } else {
+                clearInterval(typewriterInterval);
+                element.classList.add('finished');
+            }
+        }, 200); // 200ms delay between lines
     }
     
     stopAsciiAnimation() {
