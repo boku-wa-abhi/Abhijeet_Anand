@@ -582,54 +582,66 @@ class TerminalPortfolio {
     
     showProjects() {
         const workExperience = [
-            { 
-                name: 'Retail Sales Prediction Model', 
-                company: 'Finance Sector', 
-                description: 'Developed predictive models using Python and machine learning algorithms to forecast retail sales, improving business forecasting accuracy by 25% and enabling data-driven inventory management decisions.' 
+            {
+                company: 'DataFluct Inc.',
+                location: 'Tokyo, Japan',
+                role: 'Data Scientist',
+                date: 'Present - Present',
+                icon: 'https://img.icons8.com/ios-filled/50/000000/data-configuration.png',
+                achievements: [
+                    'Demand Forecasting: Engineered geospatial retail models for sales prediction, incorporating GIS data to inform strategic store placements and manage competitor influence using statistical integration techniques.',
+                    'Algorithm Optimization: Developed a box packaging algorithm, reducing shipping costs by 3% for 1.5M+ shipments, showcasing operational efficiency and cost-saving solutions.',
+                    'Recommendation Systems: Implemented a sophisticated recommendation engine for a cosmetics website, leveraging user data for personalized marketing which enhanced engagement metrics.',
+                    'ESG Reporting: Devised an ESG assessment framework, utilizing web scraping and data analysis to evaluate sustainability performance of major Japanese firms, resulting in a patent award.',
+                    'NLP-Driven Product Categorization: Led development of an NLP system to categorize over 5 million JICFS dataset products into 400+ carbon footprint categories using BERT and FastText with Mecab.',
+                    'Data Integration: Built robust APIs for data-driven solutions, integrating with cloud services like AWS Lambda and S3, and using Snowflake for comprehensive data handling.'
+                ]
             },
-            { 
-                name: 'Shipping Algorithm Optimization', 
-                company: 'Logistics & Operations', 
-                description: 'Designed and implemented optimized shipping algorithms using R and advanced analytics, reducing operational costs by 15% and improving delivery efficiency across multiple distribution centers.' 
-            },
-            { 
-                name: 'Recommendation System Development', 
-                company: 'Advertising Technology', 
-                description: 'Built sophisticated recommendation systems using collaborative filtering and content-based approaches, increasing user engagement by 30% and improving click-through rates for targeted advertising campaigns.' 
-            },
-            { 
-                name: 'Healthcare Analytics Platform', 
-                company: 'Healthcare Sector', 
-                description: 'Created comprehensive analytics solutions for healthcare data, developing patient outcome prediction models and treatment optimization algorithms that improved clinical decision-making processes.' 
-            },
-            { 
-                name: 'Financial Risk Assessment Models', 
-                company: 'Financial Services', 
-                description: 'Implemented machine learning models for credit risk assessment and fraud detection, utilizing Python and advanced statistical techniques to reduce financial losses and improve risk management strategies.' 
+            {
+                company: 'ARBLET INC.',
+                location: 'Tokyo, Japan',
+                role: 'R&D Engineer',
+                date: 'Dec 2018 - Sep 2020',
+                icon: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png',
+                achievements: [
+                    'ML and DL Innovations: Leveraged ML and DL methods, including boosting, ANN, and LSTM networks, to refine activity recognition with 95% accuracy.',
+                    'Activity Classification: Specialized in classifying activities using tri-axial accelerometer data from wearable devices.',
+                    'Data Preprocessing and Feature Extraction: Executed advanced data preprocessing to minimize noise and extracted key time and frequency domain features.',
+                    'Hierarchical Modeling: Developed a hierarchical tree-based model for structuring daily activities effectively.',
+                    'Elderly Healthcare Application: Led a cloud-based project for elderly healthcare, classifying activities, predicting walking speeds, and recommending exercises for improved mobility.'
+                ]
             }
         ];
         
         this.addOutput('Work Experience Portfolio:', 'help-title');
         this.addOutput('', '');
         
-        let delay = 0;
         workExperience.forEach((experience, index) => {
             setTimeout(() => {
-                const experienceLine = `${index + 1}. <span class="project-link">${experience.name}</span> - <span class="company-name">${experience.company}</span>`;
-                this.typeText(experienceLine, 'project-item', 30);
-            }, delay);
-            delay += 800;
-            
-            setTimeout(() => {
-                this.typeText(`   ${experience.description}`, 'project-description', 20);
-                this.addOutput('', '');
-            }, delay);
-            delay += 1000;
+                const experienceHtml = `
+                <div class="work-experience-entry">
+                    <div class="experience-header">
+                        <img src="${experience.icon}" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" onerror="this.src='https://img.icons8.com/ios-filled/50/000000/briefcase.png'" />
+                        <strong>${experience.company} — ${experience.location}</strong>
+                        <span class="experience-date">${experience.date}</span>
+                    </div>
+                    <div class="experience-role">
+                        <strong>Role:</strong> ${experience.role}
+                    </div>
+                    <div class="experience-achievements">
+                        ${experience.achievements.map(achievement => `
+                            <div class="achievement-item">✅ ${achievement}</div>
+                        `).join('')}
+                    </div>
+                </div>`;
+                this.addOutput(experienceHtml, 'work-experience-section');
+            }, index * 800);
         });
         
         setTimeout(() => {
-            this.typeText('💡 Six years of experience delivering data-driven solutions across diverse industries!', 'info', 40);
-        }, delay + 300);
+            this.addOutput('', '');
+            this.typeText('🚀 Proven track record of delivering impactful data science solutions across diverse industries!', 'info', 40);
+        }, workExperience.length * 800 + 500);
     }
     
     showEducation() {

@@ -929,6 +929,77 @@ body {
     100% { transform: translateY(0px); }
 }
 
+/* Work Experience Section Styles */
+.work-experience-entry {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 8px;
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience-header strong {
+    color: #00ff00;
+    font-size: 16px;
+    flex: 1;
+}
+
+.experience-date {
+    color: #ccc;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.experience-role {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.experience-role strong {
+    color: #00ff00;
+}
+
+.experience-achievements {
+    margin-left: 20px;
+}
+
+.achievement-item {
+    color: #ccc;
+    margin: 8px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.achievement-item:before {
+    content: '';
+    margin-right: 8px;
+}
+
+/* Responsive design for work experience */
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience-date {
+        margin-left: 0;
+    }
+    
+    .experience-achievements {
+        margin-left: 10px;
+    }
+}
+
 /* Additional Skills Section Styles */
 .skills-terminal {
     color: #00ff00;
