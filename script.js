@@ -678,65 +678,56 @@ class TerminalPortfolio {
         this.addOutput('Education & Certifications:', 'help-title');
         this.addOutput('', '');
         
-        // Google UX Design Certificate
+        // Indian Statistical Institute
         setTimeout(() => {
-            const googleCert = `
+            const isiDegree = `
                 <div class="education-entry">
                     <div class="education-header">
-                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px;" />
-                        <strong>Google UX Design Certificate — Coursera</strong>
-                        <span class="education-date">Jul–Oct 2024</span>
+                        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
+                        <strong>Indian Statistical Institute — Kolkata, India</strong>
+                        <span class="education-date">2018-2020</span>
                     </div>
-                    <div class="education-courses">
-                        <div class="course-item">✅ 1. Foundations of User Experience (UX) Design</div>
-                        <div class="course-item">✅ 2. Start the UX Design Process: Empathize, Define, and Ideate</div>
-                        <div class="course-item">✅ 3. Build Wireframes and Low-Fidelity Prototypes</div>
-                        <div class="course-item">✅ 4. Conduct UX Research and Test Early Concepts</div>
-                        <div class="course-item">✅ 5. Create High-Fidelity Designs and Prototypes in Figma</div>
-                        <div class="course-item">✅ 6. Responsive Web Design in Adobe XD and Figma</div>
-                        <div class="course-item">✅ 7. Design a User Experience for Social Good & Prepare for Jobs</div>
+                    <div class="education-role">
+                        <strong>Degree:</strong> Post Graduate Diploma in Applied Statistics
+                    </div>
+                    <div class="education-achievements">
+                        <div class="achievement-item">✅ Advanced Statistical Methods and Data Analysis</div>
+                        <div class="achievement-item">✅ Machine Learning and Predictive Modeling</div>
+                        <div class="achievement-item">✅ Research Methodology and Statistical Computing</div>
+                        <div class="achievement-item">✅ Probability Theory and Mathematical Statistics</div>
+                        <div class="achievement-item">✅ Applied Statistics in Real-world Scenarios</div>
                     </div>
                 </div>`;
-            this.addOutput(googleCert, 'education-section');
+            this.addOutput(isiDegree, 'education-section');
         }, 300);
         
-        // UI/UX Design Specialization
+        // Indian Institute of Technology
         setTimeout(() => {
-            const calartsCert = `
+            const iitDegree = `
                 <div class="education-entry">
                     <div class="education-header">
-                        <img src="https://img.icons8.com/fluency/48/000000/adobe-xd.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px;" />
-                        <strong>UI/UX Design Specialization — California Institute of the Arts / Coursera</strong>
-                        <span class="education-date">Jul–Oct 2024</span>
+                        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" />
+                        <strong>Indian Institute of Technology — Bombay, India</strong>
+                        <span class="education-date">Jan 2017</span>
                     </div>
-                    <div class="education-courses">
-                        <div class="course-item">✅ 1. Visual Elements of User Interface Design</div>
-                        <div class="course-item">✅ 2. UX Design Fundamentals</div>
+                    <div class="education-role">
+                        <strong>Degree:</strong> Bachelor of Technology
+                    </div>
+                    <div class="education-achievements">
+                        <div class="achievement-item">✅ Engineering Fundamentals and Technical Problem Solving</div>
+                        <div class="achievement-item">✅ Mathematics and Computational Methods</div>
+                        <div class="achievement-item">✅ Data Structures and Algorithm Design</div>
+                        <div class="achievement-item">✅ Software Development and Programming</div>
+                        <div class="achievement-item">✅ Research and Innovation Projects</div>
                     </div>
                 </div>`;
-            this.addOutput(calartsCert, 'education-section');
+            this.addOutput(iitDegree, 'education-section');
         }, 1200);
-        
-        // Bachelor's Degree
-        setTimeout(() => {
-            const bachelorDegree = `
-                <div class="education-entry">
-                    <div class="education-header">
-                        <span style="font-size: 32px; margin-right: 10px; vertical-align: middle;">🎓</span>
-                        <strong>Bachelor of Science in Hospitality Management — University of Eastern Philippines</strong>
-                        <span class="education-date">2020–2024</span>
-                    </div>
-                    <div class="education-description">
-                        Foundation in customer service, project management, and business operations.
-                    </div>
-                </div>`;
-            this.addOutput(bachelorDegree, 'education-section');
-        }, 2100);
         
         setTimeout(() => {
             this.addOutput('', '');
-            this.typeText('🌟 Continuously learning and growing in UX/UI design!', 'info', 40);
-        }, 2800);
+            this.typeText('🎓 Strong foundation in statistics, technology, and data science!', 'info', 40);
+        }, 2100);
     }
     
     showResume() {
