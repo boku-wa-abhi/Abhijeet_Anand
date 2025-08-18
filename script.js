@@ -364,7 +364,7 @@ class TerminalPortfolio {
         this.historyIndex = this.commandHistory.length;
         
         // Display command
-        this.addOutput(`abhijeet@portfolio:${this.currentPath}$ ${input}`, 'command-line');
+        this.typeText(`abhijeet@portfolio:${this.currentPath}$ ${input}`, 'command-line');
         
         // Check for exact command match first (for multi-word commands)
         let commandFound = false;
@@ -407,7 +407,7 @@ class TerminalPortfolio {
             }
             commandToExecute(argsToPass);
         } else {
-            this.addOutput(`Command not found: ${input}. Type 'help' for available commands.`, 'error');
+            this.typeText(`Command not found: ${input}. Type 'help' for available commands.`, 'error');
         }
         
         // Clear input
@@ -440,7 +440,7 @@ class TerminalPortfolio {
         if (matches.length === 1) {
             this.commandInput.value = matches[0];
         } else if (matches.length > 1) {
-            this.addOutput(`Available commands: ${matches.join(', ')}`, 'info');
+            this.typeText(`Available commands: ${matches.join(', ')}`, 'info');
         }
     }
     
@@ -519,8 +519,7 @@ class TerminalPortfolio {
     }
     
     showAbout() {
-        setTimeout(() => {
-            const aboutContent = `
+        const aboutContent = `
                 <div class="about-section">
                     <div class="about-intro">
                         <p>Hi! I'm <strong>Abhijeet Anand</strong>, a <span class="highlight">Data Scientist</span> with six years of experience, specializing in Python and R.</p>
@@ -557,8 +556,7 @@ class TerminalPortfolio {
                         <p>💡 Type <span class="command-highlight">'experience'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
                     </div>
                 </div>`;
-            this.typeText(aboutContent, 'about-content');
-        }, 300);
+        this.typeText(aboutContent, 'about-content');
     }
     
     showSkills() {
@@ -642,25 +640,23 @@ class TerminalPortfolio {
         ];
         
         workExperience.forEach((experience, index) => {
-            setTimeout(() => {
-                const experienceHtml = `
-                <div class="work-experience-entry">
-                    <div class="experience-header">
-                        <img src="${experience.icon}" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" onerror="this.src='https://img.icons8.com/ios-filled/50/000000/briefcase.png'" />
-                        <strong>${experience.company} — ${experience.location}</strong>
-                        <span class="experience-date">${experience.date}</span>
-                    </div>
-                    <div class="experience-role">
-                        <strong>Role:</strong> ${experience.role}
-                    </div>
-                    <div class="experience-achievements">
-                        ${experience.achievements.map(achievement => `
-                            <div class="achievement-item">✅ ${achievement}</div>
-                        `).join('')}
-                    </div>
-                </div>`;
-                this.typeText(experienceHtml, 'work-experience-section');
-            }, index * 800);
+            const experienceHtml = `
+            <div class="work-experience-entry">
+                <div class="experience-header">
+                    <img src="${experience.icon}" width="32" height="32" style="vertical-align: middle; margin-right: 10px; filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);" onerror="this.src='https://img.icons8.com/ios-filled/50/000000/briefcase.png'" />
+                    <strong>${experience.company} — ${experience.location}</strong>
+                    <span class="experience-date">${experience.date}</span>
+                </div>
+                <div class="experience-role">
+                    <strong>Role:</strong> ${experience.role}
+                </div>
+                <div class="experience-achievements">
+                    ${experience.achievements.map(achievement => `
+                        <div class="achievement-item">✅ ${achievement}</div>
+                    `).join('')}
+                </div>
+            </div>`;
+            this.typeText(experienceHtml, 'work-experience-section');
         });
         
 
@@ -773,11 +769,11 @@ class TerminalPortfolio {
     
     clearTerminal() {
         this.output.innerHTML = '';
-        this.addOutput('Terminal cleared.', 'success');
+        this.typeText('Terminal cleared.', 'success');
     }
     
     whoami() {
-        this.addOutput('abhijeet', 'info');
+        this.typeText('abhijeet', 'info');
     }
     
     listDirectory() {
@@ -790,16 +786,16 @@ class TerminalPortfolio {
             'resume.pdf'
         ];
         
-        this.addOutput('Directory contents:', 'info');
+        this.typeText('Directory contents:', 'info');
         files.forEach(file => {
             const isDirectory = file.endsWith('/');
             const color = isDirectory ? 'info' : '';
-            this.addOutput(`  ${file}`, color);
+            this.typeText(`  ${file}`, color);
         });
     }
     
     printWorkingDirectory() {
-        this.addOutput(`/home/abhijeet${this.currentPath}`, 'info');
+        this.typeText(`/home/abhijeet${this.currentPath}`, 'info');
     }
     
     showDate() {
@@ -813,12 +809,12 @@ class TerminalPortfolio {
             minute: '2-digit',
             second: '2-digit'
         });
-        this.addOutput(dateString, 'info');
+        this.typeText(dateString, 'info');
     }
     
     echo(args) {
         const text = args.join(' ');
-        this.addOutput(text || '', 'info');
+        this.typeText(text || '', 'info');
     }
 }
 
