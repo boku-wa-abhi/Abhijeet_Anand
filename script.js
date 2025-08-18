@@ -675,8 +675,8 @@ class TerminalPortfolio {
     }
     
     showEducation() {
-        this.addOutput('Education & Certifications:', 'help-title');
-        this.addOutput('', '');
+        const asciiHeader = this.generateAsciiArt('EDUCATION');
+        this.typeText(asciiHeader, 'ascii-art');
         
         // Indian Statistical Institute
         setTimeout(() => {
@@ -698,8 +698,8 @@ class TerminalPortfolio {
                         <div class="achievement-item">✅ Applied Statistics in Real-world Scenarios</div>
                     </div>
                 </div>`;
-            this.addOutput(isiDegree, 'education-section');
-        }, 300);
+            this.typeText(isiDegree, 'education-section');
+        }, 1000);
         
         // Indian Institute of Technology
         setTimeout(() => {
@@ -721,8 +721,8 @@ class TerminalPortfolio {
                         <div class="achievement-item">✅ Research and Innovation Projects</div>
                     </div>
                 </div>`;
-            this.addOutput(iitDegree, 'education-section');
-        }, 1200);
+            this.typeText(iitDegree, 'education-section');
+        }, 2200);
         
         setTimeout(() => {
             this.addOutput('', '');
