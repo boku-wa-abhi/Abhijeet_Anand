@@ -534,73 +534,50 @@ class TerminalPortfolio {
     }
     
     showSkills() {
-        const technicalSkills = [
-            { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-            { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-            { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-            { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-            { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-            { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-            { name: 'Hosting', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg' },
-            { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' }
+        const skills = [
+            // Programming Languages
+            { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: 'Programming Languages' },
+            { name: 'R', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg', category: 'Programming Languages' },
+            { name: 'SQL', icon: 'https://img.icons8.com/color/48/sql.png', category: 'Programming Languages' },
+            
+            // Data Analysis
+            { name: 'Data Analytics', icon: 'https://img.icons8.com/color/48/analytics.png', category: 'Data Analysis' },
+            { name: 'Statistics', icon: 'https://img.icons8.com/color/48/statistics.png', category: 'Data Analysis' },
+            { name: 'Machine Learning', icon: 'https://img.icons8.com/color/48/artificial-intelligence.png', category: 'Data Analysis' },
+            { name: 'Time Series', icon: 'https://img.icons8.com/color/48/time-series.png', category: 'Data Analysis' },
+            { name: 'Data Exploration', icon: 'https://img.icons8.com/color/48/search-database.png', category: 'Data Analysis' },
+            
+            // Data Tools
+            { name: 'ETL', icon: 'https://img.icons8.com/color/48/data-transfer.png', category: 'Data Tools' },
+            { name: 'Tableau', icon: 'https://img.icons8.com/color/48/tableau-software.png', category: 'Data Tools' },
+            { name: 'BI Tools', icon: 'https://img.icons8.com/color/48/business-intelligence.png', category: 'Data Tools' },
+            { name: 'Snowflake', icon: 'https://img.icons8.com/color/48/snowflake.png', category: 'Data Tools' },
+            { name: 'Analytics Libraries', icon: 'https://img.icons8.com/color/48/library.png', category: 'Data Tools' },
+            
+            // Visualization Tools
+            { name: 'Tableau', icon: 'https://img.icons8.com/color/48/tableau-software.png', category: 'Visualization Tools' },
+            
+            // Cloud Platforms
+            { name: 'AWS Boto', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Cloud Platforms' },
+            
+            // Source Control
+            { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: 'Source Control' }
         ];
         
-        const designSkills = [
-            { name: 'Responsive Design', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-            { name: 'Visual Layout', icon: 'https://img.icons8.com/fluency/48/design.png' },
-            { name: 'Project Execution', icon: 'https://img.icons8.com/fluency/48/project-management.png' },
-            { name: 'Collaboration', icon: 'https://img.icons8.com/fluency/48/collaboration.png' },
-            { name: 'Adaptability', icon: 'https://img.icons8.com/color/48/change.png' }
-        ];
+        const skillsHtml = `
+        <div class="skills-section">
+            <h2 style="color: #00ff00; text-align: center; margin-bottom: 30px;">Skills & Tools</h2>
+            <div class="skills-icons">
+                ${skills.map((skill, index) => `
+                    <div class="skill" style="animation-delay: ${index * 0.1}s;">
+                        <img src="${skill.icon}" alt="${skill.name}" onerror="this.src='https://img.icons8.com/color/48/code.png'">
+                        <p>${skill.name}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </div>`;
         
-        this.addOutput('Skills Portfolio:', 'help-title');
-        this.addOutput('', '');
-        
-        // Technical Skills Section
-        setTimeout(() => {
-            this.typeText('Technical Skills & Tools:', 'section-title', 30);
-        }, 200);
-        
-        setTimeout(() => {
-            let techTable = '<table style="width: 100%; margin: 10px 0;"><tr>';
-            technicalSkills.forEach((skill, index) => {
-                if (index % 4 === 0 && index > 0) {
-                    techTable += '</tr><tr>';
-                }
-                techTable += `<td align="center" style="width: 120px; padding: 10px;">
-                    <img src="${skill.icon}" width="48" height="48" style="filter: brightness(0.9);" />
-                    <br><span style="color: #00ff00; font-size: 0.9em;">${skill.name}</span>
-                </td>`;
-            });
-            techTable += '</tr></table>';
-            this.addOutput(techTable, 'skills-table');
-        }, 800);
-        
-        // Design & Soft Skills Section
-        setTimeout(() => {
-            this.addOutput('', '');
-            this.typeText('Design & Soft Skills:', 'section-title', 30);
-        }, 1400);
-        
-        setTimeout(() => {
-            let designTable = '<table style="width: 100%; margin: 10px 0;"><tr>';
-            designSkills.forEach((skill, index) => {
-                if (index % 3 === 0 && index > 0) {
-                    designTable += '</tr><tr>';
-                }
-                designTable += `<td align="center" style="width: 150px; padding: 10px;">
-                    <img src="${skill.icon}" width="48" height="48" style="filter: brightness(0.9);" />
-                    <br><span style="color: #00ff00; font-size: 0.9em;">${skill.name}</span>
-                </td>`;
-            });
-            designTable += '</tr></table>';
-            this.addOutput(designTable, 'skills-table');
-        }, 2000);
-        
-        setTimeout(() => {
-            this.addOutput('', '');
-            this.typeText('💡 Always learning and expanding my skillset!', 'info', 40);
-        }, 2600);
+        this.addOutput(skillsHtml, 'skills-content');
     }
     
     showProjects() {
