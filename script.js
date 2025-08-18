@@ -766,28 +766,25 @@ class TerminalPortfolio {
     showContact() {
         const contactText = `
 <div class="contact-section">
-    <div class="help-title">Get In Touch</div>
+    <div class="contact-title">📬 Let's Connect!</div>
     <br>
-    <p>I'm always interested in new opportunities and collaborations!</p>
-    <br>
-    <div class="contact-links">
-        <a href="mailto:abhijeet.anand@email.com" class="contact-link">
-            <i class="fas fa-envelope"></i> abhijeet.anand@email.com
+    <div class="contact-icons">
+        <a href="mailto:jolinapjavier@gmail.com" class="contact-icon" title="Email">
+            <img src="https://img.icons8.com/fluency/48/000000/email.png" alt="Email" />
         </a>
-        <a href="https://linkedin.com/in/abhijeet-anand" target="_blank" class="contact-link">
-            <i class="fab fa-linkedin"></i> LinkedIn Profile
+        <a href="https://www.linkedin.com/in/abhijeet-anand-9b411781/" target="_blank" class="contact-icon" title="LinkedIn">
+            <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" />
         </a>
-        <a href="https://wantedly.com/users/abhijeet-anand" target="_blank" class="contact-link">
-            <i class="fas fa-briefcase"></i> Wantedly Profile
+        <a href="https://github.com/boku-wa-abhi" target="_blank" class="contact-icon" title="GitHub">
+            <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" />
         </a>
-        <a href="https://github.com/abhijeet-anand" target="_blank" class="contact-link">
-            <i class="fab fa-github"></i> GitHub Profile
+        <a href="https://x.com/boku_wa_abhi" target="_blank" class="contact-icon" title="X (Twitter)">
+            <img src="https://img.icons8.com/ios-filled/48/000000/twitter.png" alt="X (Twitter)" />
+        </a>
+        <a href="https://medium.com/@boku.wa.abhi" target="_blank" class="contact-icon" title="Medium">
+            <img src="https://img.icons8.com/ios-filled/48/000000/medium-monogram.png" alt="Medium" />
         </a>
     </div>
-    <br>
-    <p><span class="highlight">Available for:</span> Data Science projects, Analytics consulting, Freelance work, and Full-time opportunities.</p>
-    <br>
-    <p><span class="highlight">Response time:</span> I typically respond within 24 hours.</p>
 </div>`;
         this.addOutput(contactText);
     }
