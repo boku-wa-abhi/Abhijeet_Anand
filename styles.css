@@ -134,11 +134,11 @@ body {
 
 .output {
     flex: 1;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
 }
 
 .welcome-message {
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .ascii-art {
