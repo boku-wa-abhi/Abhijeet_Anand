@@ -232,7 +232,7 @@ class TerminalPortfolio {
     }
     
     init() {
-        this.commandInput.addEventListener('keydown', this.handleKeyDown.bind(this));
+        this.setupEventListeners();
         this.setupLandingPage();
         this.commandInput.focus();
         
@@ -248,6 +248,25 @@ class TerminalPortfolio {
             this.commandInput.focus();
         });
     }
+    
+    setupEventListeners() {
+        this.commandInput.addEventListener('keydown', this.handleKeyDown.bind(this));
+        this.commandInput.addEventListener('input', this.handleInput.bind(this));
+        this.commandInput.focus();
+        
+        // Focus input when clicking anywhere on terminal
+        document.addEventListener('click', () => {
+            this.commandInput.focus();
+        });
+    }
+    
+    handleInput(e) {
+         // Synchronize visible text with input
+         const inputValue = e.target.value;
+         if (this.typedText) {
+             this.typedText.textContent = inputValue;
+         }
+     }
     
     setupLandingPage() {
         // Handle Enter key press on landing page
@@ -336,15 +355,7 @@ class TerminalPortfolio {
     }
     
     handleKeyDown(e) {
-        // Hide cursor when typing
-        if (this.cursor && e.key.length === 1) {
-            this.cursor.style.visibility = 'hidden';
-            setTimeout(() => {
-                if (this.cursor) this.cursor.style.visibility = 'visible';
-            }, 500);
-        }
-        
-        switch(e.key) {
+         switch(e.key) {
             case 'Enter':
                 this.stopAsciiAnimation();
                 this.processCommand();
