@@ -182,7 +182,9 @@ body {
 .cursor-blink {
     color: #00ff00;
     animation: blink 1s infinite;
-    margin-left: 2px;
+    position: absolute;
+    right: -2px;
+    pointer-events: none;
 }
 
 @keyframes blink {
