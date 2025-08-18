@@ -14,6 +14,7 @@ class TerminalPortfolio {
             help: this.showHelp.bind(this),
             about: this.showAbout.bind(this),
             skills: this.showSkills.bind(this),
+            'work experience': this.showProjects.bind(this),
             projects: this.showProjects.bind(this),
             education: this.showEducation.bind(this),
             resume: this.showResume.bind(this),
@@ -111,6 +112,38 @@ class TerminalPortfolio {
                 '██╔══██╗',
                 '██║  ██║',
                 '╚═╝  ╚═╝'
+            ],
+            'B': [
+                '██████╗ ',
+                '██╔══██╗',
+                '██████╔╝',
+                '██╔══██╗',
+                '██████╔╝',
+                '╚═════╝ '
+            ],
+            'H': [
+                '██╗  ██╗',
+                '██║  ██║',
+                '███████║',
+                '██╔══██║',
+                '██║  ██║',
+                '╚═╝  ╚═╝'
+            ],
+            'T': [
+                '████████╗',
+                '╚══██╔══╝',
+                '   ██║   ',
+                '   ██║   ',
+                '   ██║   ',
+                '   ╚═╝   '
+            ],
+            'D': [
+                '██████╗ ',
+                '██╔══██╗',
+                '██║  ██║',
+                '██║  ██║',
+                '██████╔╝',
+                '╚═════╝ '
             ]
         };
         
@@ -130,16 +163,15 @@ class TerminalPortfolio {
     initWelcomeSection() {
         const asciiNameElement = document.getElementById('ascii-name');
         if (asciiNameElement) {
-            // Apply the same ASCII art styling as the landing page
-             asciiNameElement.innerHTML = `<pre class="landing-ascii">
-      ██╗ ██████╗ ██╗     ██╗███╗   ██╗ █████╗         ██╗ █████╗ ██╗   ██╗██╗███████╗██████╗ 
-      ██║██╔═══██╗██║     ██║████╗  ██║██╔══██╗        ██║██╔══██╗██║   ██║██║██╔════╝██╔══██╗
-      ██║██║   ██║██║     ██║██╔██╗ ██║███████║        ██║███████║██║   ██║██║█████╗  ██████╔╝
- ██   ██║██║   ██║██║     ██║██║╚██╗██║██╔══██║   ██   ██║██╔══██║╚██╗ ██╔╝██║██╔══╝  ██╔══██╗
- ╚█████╔╝╚██████╔╝███████╗██║██║ ╚████║██║  ██║   ╚█████╔╝██║  ██║ ╚████╔╝ ██║███████╗██║  ██║
-  ╚════╝  ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝    ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝╚═╝  ╚═╝
-             </pre>`;
+            this.animateAsciiName(asciiNameElement, 'ABHIJEET ANAND');
         }
+        
+        // Focus on command input after welcome animation
+        setTimeout(() => {
+            if (this.commandInput) {
+                this.commandInput.focus();
+            }
+        }, 3000);
     }
     
     animateAsciiName(element, text) {
