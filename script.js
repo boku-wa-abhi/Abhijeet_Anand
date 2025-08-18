@@ -519,9 +519,6 @@ class TerminalPortfolio {
     }
     
     showAbout() {
-        const asciiHeader = this.generateAsciiArt('ABOUT ME');
-        this.typeText(asciiHeader, 'ascii-art');
-        
         setTimeout(() => {
             const aboutContent = `
                 <div class="about-section">
@@ -644,9 +641,6 @@ class TerminalPortfolio {
             }
         ];
         
-        const asciiHeader = this.generateAsciiArt('EXPERIENCE');
-        this.typeText(asciiHeader, 'ascii-art');
-        
         workExperience.forEach((experience, index) => {
             setTimeout(() => {
                 const experienceHtml = `
@@ -666,7 +660,7 @@ class TerminalPortfolio {
                     </div>
                 </div>`;
                 this.typeText(experienceHtml, 'work-experience-section');
-            }, index * 1200 + 1000);
+            }, index * 800);
         });
         
         setTimeout(() => {
@@ -676,9 +670,6 @@ class TerminalPortfolio {
     }
     
     showEducation() {
-        const asciiHeader = this.generateAsciiArt('EDUCATION');
-        this.typeText(asciiHeader, 'ascii-art');
-        
         // Indian Statistical Institute
         setTimeout(() => {
             const isiDegree = `
