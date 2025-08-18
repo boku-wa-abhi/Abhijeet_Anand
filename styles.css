@@ -53,7 +53,20 @@ body {
 }
 
 .terminal-container.maximized .welcome-message p:last-child {
-    margin-bottom: 150px;
+    margin-bottom: 0;
+}
+
+.terminal-container.maximized .terminal-body {
+    display: block;
+}
+
+.terminal-container.maximized .output {
+    margin-bottom: 0;
+}
+
+.terminal-container.maximized .input-line {
+    margin-top: 150px;
+    position: static;
 }
 
 @media (max-width: 768px) {
