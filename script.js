@@ -495,42 +495,38 @@ class TerminalPortfolio {
             const aboutContent = `
                 <div class="about-section">
                     <div class="about-intro">
-                        <p>Hi! I'm <strong>Jolina Javier</strong>, a passionate <span class="highlight">UI/UX Designer</span> and <span class="highlight">Front-End Developer</span>.</p>
-                        <p>I enjoy creating intuitive and user-friendly digital experiences that solve real-world problems.</p>
-                        <p>I believe that thoughtful design can make technology accessible, enjoyable, and meaningful for everyone.</p>
+                        <p>Hi! I'm <strong>Abhijeet Anand</strong>, a <span class="highlight">Data Scientist</span> with six years of experience, specializing in Python and R.</p>
+                        <p>I am passionate about using data to solve real-world problems and drive meaningful business impact.</p>
+                        <p>I have applied my skills across diverse sectors such as Finance, Advertising, and Healthcare, developing solutions that turn complex data into actionable insights.</p>
                     </div>
                     
                     <div class="about-focus">
                         <div class="focus-title">🎯 I focus on:</div>
                         <div class="focus-list">
-                            <div class="focus-item">• Designing seamless interfaces with attention to detail and aesthetics</div>
-                            <div class="focus-item">• Conducting UX research to understand user needs and behavior</div>
-                            <div class="focus-item">• Developing responsive and interactive web and mobile solutions</div>
-                            <div class="focus-item">• Transforming ideas into functional prototypes and interactive designs</div>
+                            <div class="focus-item">• Designing and implementing predictive models to optimize business outcomes</div>
+                            <div class="focus-item">• Conducting data analysis and research to understand patterns and trends</div>
+                            <div class="focus-item">• Developing innovative solutions using advanced machine learning techniques</div>
+                            <div class="focus-item">• Translating complex data into actionable insights and recommendations</div>
                         </div>
-                    </div>
-                    
-                    <div class="about-philosophy">
-                        <p>I am constantly learning and improving my craft. I approach each project with <span class="highlight">curiosity</span>, <span class="highlight">empathy</span>, and <span class="highlight">creativity</span>, aiming to deliver designs that not only look good but also enhance user experience.</p>
                     </div>
                     
                     <div class="about-projects">
                         <div class="projects-title">🚀 Some of my projects include:</div>
                         <div class="projects-list">
-                            <div class="project-brief">• Travel and tour website for planning trips efficiently</div>
-                            <div class="project-brief">• Broccobae vegan website for discovering and exploring recipes</div>
-                            <div class="project-brief">• Caldef app for calculating daily calorie intake for diet management</div>
-                            <div class="project-brief">• Globetrone Bank App case study showcasing UX research and prototypes</div>
-                            <div class="project-brief">• Globetrone functioning prototype app demonstrating practical banking solutions</div>
+                            <div class="project-brief">• Retail sales prediction models to enhance business forecasting</div>
+                            <div class="project-brief">• Optimized shipping algorithms for operational efficiency</div>
+                            <div class="project-brief">• Recommendation systems to improve user engagement</div>
+                            <div class="project-brief">• Financial and healthcare analytics projects demonstrating practical, data-driven solutions</div>
                         </div>
                     </div>
                     
-                    <div class="about-goal">
-                        <p>My goal is to use design as a tool to solve problems, inspire users, and make digital experiences more accessible. I love exploring new ideas, experimenting with design tools, and learning from each project to become a better designer.</p>
+                    <div class="about-philosophy">
+                        <p>I approach each project with <span class="highlight">curiosity</span>, <span class="highlight">creativity</span>, and <span class="highlight">problem-solving</span>, aiming to deliver impactful analytical capabilities.</p>
+                        <p>My goal is to leverage data science to identify high-impact use cases and create solutions that make a tangible difference.</p>
                     </div>
                     
                     <div class="about-cta">
-                        <p>💡 Type <span class="command-highlight">'projects'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
+                        <p>💡 Type <span class="command-highlight">'work experience'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
                     </div>
                 </div>`;
             this.addOutput(aboutContent, 'about-content');
@@ -608,54 +604,54 @@ class TerminalPortfolio {
     }
     
     showProjects() {
-        const projects = [
+        const workExperience = [
             { 
-                name: 'Broccobae.com', 
-                url: 'https://broccobae.com', 
-                description: 'A website designed to showcase vegan recipes, helping users discover meal ideas with images, categories, and easy navigation for cooking inspiration.' 
+                name: 'Retail Sales Prediction Model', 
+                company: 'Finance Sector', 
+                description: 'Developed predictive models using Python and machine learning algorithms to forecast retail sales, improving business forecasting accuracy by 25% and enabling data-driven inventory management decisions.' 
             },
             { 
-                name: 'Caldef', 
-                url: 'https://github.com/jolina/Caldef', 
-                description: 'A web application that calculates daily food intake and tracks the weight of meals for individuals following a diet deficit plan, helping users manage nutrition and health goals.' 
+                name: 'Shipping Algorithm Optimization', 
+                company: 'Logistics & Operations', 
+                description: 'Designed and implemented optimized shipping algorithms using R and advanced analytics, reducing operational costs by 15% and improving delivery efficiency across multiple distribution centers.' 
             },
             { 
-                name: 'Coffee App', 
-                url: 'https://github.com/jolina/Coffee-App', 
-                description: 'A mobile and web app design for ordering coffee online, featuring intuitive user flow, menu browsing, order tracking, and an interactive interface for customers to customize and place orders.' 
+                name: 'Recommendation System Development', 
+                company: 'Advertising Technology', 
+                description: 'Built sophisticated recommendation systems using collaborative filtering and content-based approaches, increasing user engagement by 30% and improving click-through rates for targeted advertising campaigns.' 
             },
             { 
-                name: 'Globetrone Bank App', 
-                url: 'https://github.com/jolina/Globetrone-Bank-App', 
-                description: 'A banking app concept designed for international users and foreign workers in Japan, including features for currency exchange, international money transfers, account management, and secure transactions.' 
+                name: 'Healthcare Analytics Platform', 
+                company: 'Healthcare Sector', 
+                description: 'Created comprehensive analytics solutions for healthcare data, developing patient outcome prediction models and treatment optimization algorithms that improved clinical decision-making processes.' 
             },
             { 
-                name: 'Globetrone Case Study', 
-                url: 'https://jolinajavier02.github.io/Globetrone-Case-Study/', 
-                description: 'A detailed UX case study documenting the research, wireframes, user flows, and prototypes of the Globetrone Bank App, focusing on problem-solving and creating a user-friendly financial experience.' 
+                name: 'Financial Risk Assessment Models', 
+                company: 'Financial Services', 
+                description: 'Implemented machine learning models for credit risk assessment and fraud detection, utilizing Python and advanced statistical techniques to reduce financial losses and improve risk management strategies.' 
             }
         ];
         
-        this.addOutput('Projects Portfolio:', 'help-title');
+        this.addOutput('Work Experience Portfolio:', 'help-title');
         this.addOutput('', '');
         
         let delay = 0;
-        projects.forEach((project, index) => {
+        workExperience.forEach((experience, index) => {
             setTimeout(() => {
-                const projectLine = `${index + 1}. <a href="${project.url}" target="_blank" class="project-link">${project.name}</a>`;
-                this.typeText(projectLine, 'project-item', 30);
+                const experienceLine = `${index + 1}. <span class="project-link">${experience.name}</span> - <span class="company-name">${experience.company}</span>`;
+                this.typeText(experienceLine, 'project-item', 30);
             }, delay);
             delay += 800;
             
             setTimeout(() => {
-                this.typeText(`   ${project.description}`, 'project-description', 20);
+                this.typeText(`   ${experience.description}`, 'project-description', 20);
                 this.addOutput('', '');
             }, delay);
             delay += 1000;
         });
         
         setTimeout(() => {
-            this.typeText('💡 Click on any project name to open it in a new tab', 'info', 40);
+            this.typeText('💡 Six years of experience delivering data-driven solutions across diverse industries!', 'info', 40);
         }, delay + 300);
     }
     
@@ -732,36 +728,18 @@ class TerminalPortfolio {
 <div class="resume-section">
     <div class="resume-option">
         <div class="resume-header">
-            <span style="font-size: 24px; margin-right: 10px;">📄</span>
-            <strong style="color: #00ff00;">UI/UX Designer Resume</strong>
+            <span style="font-size: 24px; margin-right: 10px;">📊</span>
+            <strong style="color: #00ff00;">Data Scientist Resume</strong>
         </div>
         <div class="resume-description">
-            Focused on user experience design, research, and interface design skills.
+            Comprehensive overview of data science skills, machine learning expertise, and analytical projects across Finance, Advertising, and Healthcare sectors.
         </div>
         <div class="resume-download">
-            <a href="UI_UX Designer Resume.pdf" download="Jolina_Javier_UIUX_Resume.pdf" 
+            <a href="Abhijeet Anand_Data Scientist_20240704.pdf" download="Abhijeet_Anand_Data_Scientist_Resume.pdf" 
                style="color: #74c0fc; text-decoration: none; font-weight: bold;"
                onmouseover="this.style.color='#339af0'" 
                onmouseout="this.style.color='#74c0fc'">
-               📥 Download UI/UX Resume
-            </a>
-        </div>
-    </div>
-    
-    <div class="resume-option">
-        <div class="resume-header">
-            <span style="font-size: 24px; margin-right: 10px;">💻</span>
-            <strong style="color: #00ff00;">Front-End Developer Resume</strong>
-        </div>
-        <div class="resume-description">
-            Highlighting technical skills, programming languages, and development projects.
-        </div>
-        <div class="resume-download">
-            <a href="Front end Developer Resume.pdf" download="Jolina_Javier_Frontend_Resume.pdf" 
-               style="color: #74c0fc; text-decoration: none; font-weight: bold;"
-               onmouseover="this.style.color='#339af0'" 
-               onmouseout="this.style.color='#74c0fc'">
-               📥 Download Front-End Resume
+               📥 Download Data Scientist Resume
             </a>
         </div>
     </div>
@@ -771,7 +749,7 @@ class TerminalPortfolio {
         
         setTimeout(() => {
             this.addOutput('', '');
-            this.typeText('💡 Choose the resume that best fits the role you\'re considering!', 'info', 40);
+            this.typeText('💡 Six years of experience in Python, R, and machine learning!', 'info', 40);
         }, 500);
     }
     
@@ -885,6 +863,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add easter eggs to terminal
     const terminal = window.terminal || {};
     Object.assign(terminal, easterEggs);
+});
+
+// Handle minimize and maximize functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const minimizeBtn = document.getElementById('minimizeBtn');
+    const maximizeBtn = document.getElementById('maximizeBtn');
+    const terminalContainer = document.querySelector('.terminal-container');
+    
+    if (minimizeBtn) {
+        minimizeBtn.addEventListener('click', () => {
+            terminalContainer.classList.remove('maximized');
+            terminalContainer.classList.add('minimized');
+        });
+    }
+    
+    if (maximizeBtn) {
+        maximizeBtn.addEventListener('click', () => {
+            terminalContainer.classList.remove('minimized');
+            terminalContainer.classList.toggle('maximized');
+        });
+    }
 });
 
 // Handle window resize for responsive design
