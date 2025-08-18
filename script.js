@@ -501,11 +501,12 @@ class TerminalPortfolio {
     <div class="help-commands">
         <div class="help-command"><span class="command-name">help</span> - Show this help message</div>
         <div class="help-command"><span class="command-name">about</span> - Learn more about Abhijeet</div>
-        <div class="help-command"><span class="command-name">skills</span> - View technical skills and tools</div>
-        <div class="help-command"><span class="command-name">work experience</span> - Browse work experience</div>
+        <div class="help-command"><span class="command-name">experience</span> - Browse work experience</div>
         <div class="help-command"><span class="command-name">education</span> - View educational background</div>
+        <div class="help-command"><span class="command-name">projects</span> - View projects and portfolio</div>
+        <div class="help-command"><span class="command-name">contact</span> - Get contact information with links</div>
+        <div class="help-command"><span class="command-name">skills</span> - View technical skills and tools</div>
         <div class="help-command"><span class="command-name">resume</span> - Download resume (Data Scientist)</div>
-        <div class="help-command"><span class="command-name">contact</span> - Get contact information</div>
         <div class="help-command"><span class="command-name">clear</span> - Clear the terminal</div>
         <div class="help-command"><span class="command-name">whoami</span> - Display current user</div>
         <div class="help-command"><span class="command-name">ls</span> - List directory contents</div>
@@ -514,7 +515,7 @@ class TerminalPortfolio {
         <div class="help-command"><span class="command-name">echo</span> - Display a line of text</div>
     </div>
 </div>`;
-        this.addOutput(helpText);
+        this.typeText(helpText);
     }
     
     showAbout() {
