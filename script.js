@@ -5,6 +5,7 @@ class TerminalPortfolio {
         this.commandInput = document.getElementById('commandInput');
         this.output = document.getElementById('output');
         this.landingOverlay = document.getElementById('landingOverlay');
+        this.typedText = document.getElementById('typedText');
         this.cursor = document.querySelector('.cursor-blink');
         this.commandHistory = [];
         this.historyIndex = -1;
