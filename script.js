@@ -17,7 +17,6 @@ class TerminalPortfolio {
             about: this.showAbout.bind(this),
             skills: this.showSkills.bind(this),
             'work experience': this.showProjects.bind(this),
-            projects: this.showProjects.bind(this),
             education: this.showEducation.bind(this),
             resume: this.showResume.bind(this),
             contact: this.showContact.bind(this),
@@ -844,7 +843,7 @@ class TerminalPortfolio {
         const files = [
             'about.txt',
             'skills.json',
-            'projects/',
+            'work_experience/',
             'education.md',
             'contact.vcf',
             'resume.pdf'
@@ -914,10 +913,11 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.assign(terminal, easterEggs);
 });
 
-// Handle minimize and maximize functionality
+// Handle minimize, maximize, and close functionality
 document.addEventListener('DOMContentLoaded', () => {
     const minimizeBtn = document.getElementById('minimizeBtn');
     const maximizeBtn = document.getElementById('maximizeBtn');
+    const closeBtn = document.querySelector('.btn.close');
     const terminalContainer = document.querySelector('.terminal-container');
     
     if (minimizeBtn) {
@@ -931,6 +931,12 @@ document.addEventListener('DOMContentLoaded', () => {
         maximizeBtn.addEventListener('click', () => {
             terminalContainer.classList.remove('minimized');
             terminalContainer.classList.toggle('maximized');
+        });
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            window.close();
         });
     }
 });
