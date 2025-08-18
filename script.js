@@ -467,6 +467,7 @@ class TerminalPortfolio {
                 currentHTML += text[i];
                 // Update innerHTML to render HTML properly
                 div.innerHTML = currentHTML;
+                this.scrollToBottom();
                 i++;
                 if (i >= text.length) {
                     clearInterval(typeInterval);
@@ -477,6 +478,7 @@ class TerminalPortfolio {
             let i = 0;
             const typeInterval = setInterval(() => {
                 div.textContent += text[i];
+                this.scrollToBottom();
                 i++;
                 if (i >= text.length) {
                     clearInterval(typeInterval);
