@@ -518,8 +518,8 @@ class TerminalPortfolio {
     }
     
     showAbout() {
-        this.addOutput('About Me', 'help-title');
-        this.addOutput('', '');
+        const asciiHeader = this.generateAsciiArt('ABOUT ME');
+        this.typeText(asciiHeader, 'ascii-art');
         
         setTimeout(() => {
             const aboutContent = `
@@ -556,11 +556,11 @@ class TerminalPortfolio {
                     </div>
                     
                     <div class="about-cta">
-                        <p>💡 Type <span class="command-highlight">'work experience'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
+                        <p>💡 Type <span class="command-highlight">'experience'</span> to see my work, or <span class="command-highlight">'contact'</span> to get in touch!</p>
                     </div>
                 </div>`;
-            this.addOutput(aboutContent, 'about-content');
-        }, 300);
+            this.typeText(aboutContent, 'about-content');
+        }, 1000);
     }
     
     showSkills() {
