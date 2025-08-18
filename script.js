@@ -448,6 +448,7 @@ class TerminalPortfolio {
         div.className = `command-output ${className}`;
         div.innerHTML = text;
         this.output.appendChild(div);
+        this.scrollToBottom();
     }
     
     typeText(text, className = '', delay = 50) {
