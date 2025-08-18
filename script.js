@@ -239,10 +239,7 @@ class TerminalPortfolio {
             this.initWelcomeSection();
         }, 100);
         
-        // Show welcome message with typing effect
-        setTimeout(() => {
-            this.typeText('Type "help" to see available commands.', 'info');
-        }, 1000);
+        // Welcome message removed
         
         // Keep input focused
         document.addEventListener('click', () => {
@@ -270,7 +267,7 @@ class TerminalPortfolio {
     }
     
     startTypewriterAnimation() {
-        const text1 = "Hi Dear! I'm Abhijeet Anand, a passionate Data Scientist & Analytics Expert.";
+        const text1 = "I'm Abhijeet Anand, a passionate Data Scientist & Analytics Expert.";
         const text2 = "I specialize in Python and R with six years of experience across diverse sectors.";
         
         const typewriter1 = document.getElementById('typewriter1');

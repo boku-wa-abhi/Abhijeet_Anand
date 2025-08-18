@@ -474,6 +474,19 @@ body {
     white-space: normal;
 }
 
+/* Remove cursor from ASCII art typewriter */
+.ascii-art.typewriter {
+    border-right: none;
+}
+
+.ascii-art.typewriter.typing {
+    animation: none;
+}
+
+.ascii-art.typewriter.finished {
+    border-right: none;
+}
+
 @keyframes blink-caret {
     from, to {
         border-color: transparent;
