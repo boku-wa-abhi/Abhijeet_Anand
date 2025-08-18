@@ -786,7 +786,7 @@ class TerminalPortfolio {
         </a>
     </div>
 </div>`;
-        this.addOutput(contactText);
+        this.typeText(contactText);
     }
     
     clearTerminal() {
