@@ -35,10 +35,10 @@
     
     <div class="terminal-container">
         <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="btn close"></span>
-                <span class="btn minimize" id="minimizeBtn"></span>
-                <span class="btn maximize" id="maximizeBtn"></span>
+            <div class="window-controls">
+                <span class="red" onclick="window.close()" title="Close Page"></span>
+                <span class="yellow" onclick="document.querySelector('.terminal-container').style.display='none'" title="Minimize Terminal"></span>
+                <span class="green"></span>
             </div>
             <div class="terminal-title">abhijeet@portfolio:~$</div>
         </div>

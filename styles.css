@@ -94,27 +94,27 @@ body {
     border-bottom: 1px solid #333;
 }
 
-.terminal-buttons {
+.window-controls {
     display: flex;
     gap: 8px;
 }
 
-.terminal-buttons .btn {
+.window-controls span {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.terminal-buttons .close {
+.window-controls .red {
     background: #ff5f56;
 }
 
-.terminal-buttons .minimize {
+.window-controls .yellow {
     background: #ffbd2e;
 }
 
-.terminal-buttons .maximize {
+.window-controls .green {
     background: #27ca3f;
 }
 

@@ -913,30 +913,15 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.assign(terminal, easterEggs);
 });
 
-// Handle minimize, maximize, and close functionality
+// Handle maximize functionality for green button (minimize and close are now handled inline)
 document.addEventListener('DOMContentLoaded', () => {
-    const minimizeBtn = document.getElementById('minimizeBtn');
-    const maximizeBtn = document.getElementById('maximizeBtn');
-    const closeBtn = document.querySelector('.btn.close');
+    const greenBtn = document.querySelector('.window-controls .green');
     const terminalContainer = document.querySelector('.terminal-container');
     
-    if (minimizeBtn) {
-        minimizeBtn.addEventListener('click', () => {
-            terminalContainer.classList.remove('maximized');
-            terminalContainer.classList.add('minimized');
-        });
-    }
-    
-    if (maximizeBtn) {
-        maximizeBtn.addEventListener('click', () => {
+    if (greenBtn) {
+        greenBtn.addEventListener('click', () => {
             terminalContainer.classList.remove('minimized');
             terminalContainer.classList.toggle('maximized');
-        });
-    }
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            window.close();
         });
     }
 });
