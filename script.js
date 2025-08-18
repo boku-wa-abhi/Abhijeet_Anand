@@ -558,7 +558,7 @@ class TerminalPortfolio {
                     </div>
                 </div>`;
             this.typeText(aboutContent, 'about-content');
-        }, 1000);
+        }, 300);
     }
     
     showSkills() {
@@ -691,7 +691,7 @@ class TerminalPortfolio {
                     </div>
                 </div>`;
             this.typeText(isiDegree, 'education-section');
-        }, 1000);
+        }, 300);
         
         // Indian Institute of Technology
         setTimeout(() => {
@@ -714,7 +714,7 @@ class TerminalPortfolio {
                     </div>
                 </div>`;
             this.typeText(iitDegree, 'education-section');
-        }, 2200);
+        }, 1200);
         
         setTimeout(() => {
             this.addOutput('', '');
