@@ -48,6 +48,14 @@ body {
     z-index: 1000;
 }
 
+.terminal-container.maximized .welcome-message {
+    margin-bottom: 50px;
+}
+
+.terminal-container.maximized .welcome-message p:last-child {
+    margin-bottom: 150px;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -155,6 +163,10 @@ body {
     color: #ccc;
     margin-bottom: 8px;
     text-align: center;
+}
+
+.welcome-message p:last-child {
+    margin-top: 50px;
 }
 
 .highlight {
