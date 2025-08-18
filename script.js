@@ -769,20 +769,20 @@ class TerminalPortfolio {
     <div class="contact-title">📬 Let's Connect!</div>
     <br>
     <div class="contact-icons">
-        <a href="mailto:jolinapjavier@gmail.com" class="contact-icon" title="Email">
-            <img src="https://img.icons8.com/fluency/48/000000/email.png" alt="Email" />
+        <a href="mailto:abbi163@gmail.com" class="contact-icon" title="Email">
+            <img src="https://img.icons8.com/fluency/48/1e90ff/email.png" alt="Email" />
         </a>
         <a href="https://www.linkedin.com/in/abhijeet-anand-9b411781/" target="_blank" class="contact-icon" title="LinkedIn">
-            <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" />
+            <img src="https://img.icons8.com/color/48/1e90ff/linkedin.png" alt="LinkedIn" />
         </a>
         <a href="https://github.com/boku-wa-abhi" target="_blank" class="contact-icon" title="GitHub">
-            <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub" />
+            <img src="https://img.icons8.com/ios-glyphs/48/1e90ff/github.png" alt="GitHub" />
         </a>
         <a href="https://x.com/boku_wa_abhi" target="_blank" class="contact-icon" title="X (Twitter)">
-            <img src="https://img.icons8.com/ios-filled/48/000000/twitter.png" alt="X (Twitter)" />
+            <img src="https://img.icons8.com/ios-filled/48/1e90ff/twitter.png" alt="X (Twitter)" />
         </a>
         <a href="https://medium.com/@boku.wa.abhi" target="_blank" class="contact-icon" title="Medium">
-            <img src="https://img.icons8.com/ios-filled/48/000000/medium-monogram.png" alt="Medium" />
+            <img src="https://img.icons8.com/ios-filled/48/1e90ff/medium-monogram.png" alt="Medium" />
         </a>
     </div>
 </div>`;
