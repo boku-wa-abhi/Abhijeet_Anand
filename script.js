@@ -5,6 +5,7 @@ class TerminalPortfolio {
         this.commandInput = document.getElementById('commandInput');
         this.output = document.getElementById('output');
         this.landingOverlay = document.getElementById('landingOverlay');
+        this.cursor = document.querySelector('.cursor-blink');
         this.commandHistory = [];
         this.historyIndex = -1;
         this.currentPath = '~';
@@ -334,6 +335,14 @@ class TerminalPortfolio {
     }
     
     handleKeyDown(e) {
+        // Hide cursor when typing
+        if (this.cursor && e.key.length === 1) {
+            this.cursor.style.visibility = 'hidden';
+            setTimeout(() => {
+                if (this.cursor) this.cursor.style.visibility = 'visible';
+            }, 500);
+        }
+        
         switch(e.key) {
             case 'Enter':
                 this.stopAsciiAnimation();
@@ -489,7 +498,12 @@ class TerminalPortfolio {
     
     scrollToBottom() {
         const terminalBody = document.querySelector('.terminal-body');
-        terminalBody.scrollTop = terminalBody.scrollHeight;
+        if (terminalBody) {
+            terminalBody.scrollTo({
+                top: terminalBody.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
     }
     
     // Command implementations
