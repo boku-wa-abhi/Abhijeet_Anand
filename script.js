@@ -663,10 +663,7 @@ class TerminalPortfolio {
             }, index * 800);
         });
         
-        setTimeout(() => {
-            this.addOutput('', '');
-            this.typeText('🚀 Proven track record of delivering impactful data science solutions across diverse industries!', 'info', 40);
-        }, workExperience.length * 800 + 500);
+
     }
     
     showEducation() {
@@ -716,10 +713,7 @@ class TerminalPortfolio {
             this.typeText(iitDegree, 'education-section');
         }, 1200);
         
-        setTimeout(() => {
-            this.addOutput('', '');
-            this.typeText('🎓 Strong foundation in statistics, technology, and data science!', 'info', 40);
-        }, 2100);
+
     }
     
     showResume() {
