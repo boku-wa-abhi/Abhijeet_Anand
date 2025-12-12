@@ -3,69 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhijeet Anand - Terminal Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Abhijeet Anand | Data Scientist & Analytics Expert</title>
+    <meta name="description" content="Data Scientist with 6+ years of experience in Python, R, Machine Learning, and Analytics across Finance, Advertising, and Healthcare sectors.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Landing Page Overlay -->
-    <div class="landing-overlay" id="landingOverlay">
-        <div class="landing-content">
-            <pre class="landing-ascii">
-██╗  ██╗██╗    ██████╗ ███████╗ █████╗ ██████╗ 
-██║  ██║██║    ██╔══██╗██╔════╝██╔══██╗██╔══██╗
-███████║██║    ██║  ██║█████╗  ███████║██████╔╝
-██╔══██║██║    ██║  ██║██╔══╝  ██╔══██║██╔══██╗
-██║  ██║██║    ██████╔╝███████╗██║  ██║██║  ██║
-╚═╝  ╚═╝╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
-            </pre>
-            <div class="landing-description">
-                <p id="typewriter1" class="typewriter"></p>
-                <p id="typewriter2" class="typewriter"></p>
-            </div>
-            <div class="landing-instruction">
-                <p>Click 'Enter' to see my work, and to get in touch!</p>
-                <div class="enter-hint">Press <span class="key-highlight">ENTER</span></div>
-            </div>
-        </div>
-    </div>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
     
-    <div class="terminal-container">
-        <div class="terminal-header">
-            <div class="window-controls">
-                <span class="red" onclick="window.close(); if(!window.closed) { window.location.href = 'about:blank'; }" title="Close Page"></span>
-                <span class="yellow" onclick="document.body.style.visibility='hidden'; setTimeout(() => { if(confirm('Tab minimized. Click OK to restore.')) { document.body.style.visibility='visible'; } }, 100);" title="Minimize Tab"></span>
-                <span class="green"></span>
-            </div>
-            <div class="terminal-title">abhijeet@portfolio:~$</div>
-        </div>
-        
-        <div class="terminal-body">
-            <div class="output" id="output">
-                <div class="welcome-message">
-                    <div class="ascii-name-container">
-                        <pre class="ascii-art typewriter" id="ascii-name"></pre>
-                    </div>
-                    <p>Welcome to Abhijeet Anand's Terminal Portfolio</p>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header with Navigation -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">AA</span>
+                <div class="logo-text">
+                    <h1>Abhijeet Anand</h1>
                     <p>Data Scientist & Analytics Expert</p>
-                    <div style="margin-bottom: 60px;"></div>
-                    <p style="text-align: left; margin-top: 0; color: #74c0fc;">Type <span class="highlight">'help'</span> to see available commands.</p>
-                    <div style="margin-bottom: 100px;"></div>
                 </div>
             </div>
             
-            <div class="input-line">
-                <span class="prompt">abhijeet@portfolio:~$ </span>
-                <div class="input-container">
-                    <span id="typedText" class="typed-text"></span>
-                    <span class="cursor-blink">|</span>
-                    <input type="text" id="commandInput" class="command-input" autocomplete="off" spellcheck="false">
-                </div>
+            <!-- Tab Navigation -->
+            <nav class="nav-tabs" id="navTabs">
+                <button class="tab-btn active" data-tab="about">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </button>
+                <button class="tab-btn" data-tab="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experience</span>
+                </button>
+                <button class="tab-btn" data-tab="skills">
+                    <i class="fas fa-code"></i>
+                    <span>Skills</span>
+                </button>
+                <button class="tab-btn" data-tab="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </button>
+                <button class="tab-btn" data-tab="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+        
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <!-- Content will be loaded dynamically -->
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Abhijeet Anand. Crafted with passion.</p>
+            <div class="social-links">
+                <a href="mailto:abhijeet.anand@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/abhijeet-anand" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/boku-wa-abhi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
-        </div>
+        </footer>
     </div>
     
     <script src="script.js"></script>
