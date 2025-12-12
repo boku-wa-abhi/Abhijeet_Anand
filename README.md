@@ -1,199 +1,87 @@
-# Abhijeet Anand - Interactive Portfolio
+# Abhijeet Anand - Portfolio Website
 
-🌐 **Live Website**: [https://abhijeet-anand.vercel.app/](https://abhijeet-anand.vercel.app/)
+A modern, tab-based resume portfolio website showcasing my experience as a Data Scientist & Analytics Expert.
 
-🎨 A modern, interactive portfolio website for Abhijeet Anand, showcasing his skills as a Data Scientist & Analytics Expert.
+## 🌐 Live Site
 
-## ✨ Features
-
-### 🎭 Interactive Elements
-- **Custom Cursor**: Dynamic cursor that responds to hover states
-- **Loading Animation**: Elegant loading screen with progress bar
-- **Smooth Scrolling**: Seamless navigation between sections
-- **Window Controls**: Terminal-style window controls with functional buttons:
-  - Red button: Close page functionality
-  - Yellow button: Minimize terminal interface
-  - Green button: Toggle maximize/minimize terminal
-- **Micro-interactions**: Hover effects, button animations, and transitions
-
-### 🎨 Design & Animations
-- **Modern Design**: Clean, professional layout with playful elements
-- **Dark/Light Theme**: Toggle between light and dark modes
-- **Parallax Effects**: Floating elements with scroll-based animations
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Smooth Transitions**: CSS animations and JavaScript-powered effects
-
-### 📱 Sections
-
-#### 🏠 Hero Section
-- Animated introduction with typewriter effect
-- Floating technology icons (Figma, HTML, CSS, JavaScript)
-- Call-to-action buttons with hover effects
-- Scroll indicator with bounce animation
-
-#### 👤 About Modal
-- Interactive popup with personal information
-- Design philosophy and skills showcase
-- Smooth modal animations
-- Accessibility-friendly focus management
-
-#### 💼 Work Experience
-- Interactive experience cards with hover effects
-- Detailed experience modals with:
-  - Role descriptions
-  - Technologies and tools used
-  - Key achievements
-  - Data science projects and solutions
-- Staggered animations on scroll
-
-#### 📄 Resume Section
-- PDF download functionality
-- Quick preview modal
-- Professional presentation
-
-#### 📞 Contact
-- Animated contact form
-- Social media links with hover effects
-- Form validation and submission feedback
-- Notification system
-
-### 🛠️ Technical Features
-- **Vanilla JavaScript**: No framework dependencies
-- **CSS Grid & Flexbox**: Modern layout techniques
-- **CSS Custom Properties**: Theme system with CSS variables
-- **Intersection Observer**: Scroll-based animations
-- **Local Storage**: Theme preference persistence
-- **Accessibility**: WCAG compliant with keyboard navigation
-- **Performance Optimized**: Throttled scroll events and efficient animations
-
-## 🚀 Getting Started
-
-### Prerequisites
-- A modern web browser
-- Python 3.x (for local development server)
-
-### Installation
-
-1. **Clone or download the project files**
-   ```bash
-   # If using git
-   git clone <repository-url>
-   cd portfolio
-   ```
-
-2. **Start a local development server**
-   ```bash
-   # Using Python (recommended)
-   python3 -m http.server 9000
-   
-   # Or using Node.js serve
-   npx serve . -p 3000
-   
-   # Or using any other static file server
-   ```
-
-3. **Open in browser**
-   - Navigate to `http://localhost:9000` (or your chosen port)
-   - The portfolio will load with the animated loading screen
+Visit: [abhijeetanand.com](https://abhijeetanand.com) *(or your custom domain)*
 
 ## 📁 Project Structure
 
 ```
-portfolio/
-├── index.html          # Main HTML structure
-├── styles.css          # CSS styles and animations
-├── script.js           # JavaScript functionality
-└── README.md           # Project documentation
+Abhijeet_Anand/
+├── index.html          # Main entry point with navigation
+├── styles.css          # Complete design system (dark mode, glassmorphism)
+├── script.js           # Tab navigation and dynamic page loading
+├── CNAME               # Custom domain configuration
+├── README.md           # This file
+├── pages/              # Modular page content
+│   ├── about.html      # About section
+│   ├── experience.html # Work experience details
+│   ├── skills.html     # Technical skills
+│   ├── education.html  # Education background
+│   └── contact.html    # Contact information
+└── resources/          # Static assets
+    └── Abhijeet_Anand_Data Scientist_20240704.pdf  # Resume PDF
 ```
 
-## 🎯 Key Interactions
+## ✨ Features
 
-### Navigation
-- **Smooth Scrolling**: Click navigation links for smooth section transitions
-- **Mobile Menu**: Hamburger menu for mobile devices
-- **Theme Toggle**: Switch between light and dark themes
+- **Modern Design**: Dark mode with glassmorphism effects and gradient accents
+- **Tab-Based Navigation**: Smooth transitions between sections
+- **Responsive**: Works on desktop, tablet, and mobile devices
+- **Modular**: Each section is in a separate file for easy editing
+- **Fast**: Page content is cached after first load
+- **Accessible**: Keyboard navigation support (arrow keys)
 
-### Modals
-- **About Modal**: Click "Get to know me" button
-- **Contact Modal**: Click "Send Message" button
-- **Experience Details**: Click on any experience card
-- **Resume Preview**: Click "Quick View" in resume section
+## 🛠️ Technologies
 
-### Animations
-- **Scroll Animations**: Elements fade in as you scroll
-- **Hover Effects**: Interactive elements respond to mouse hover
-- **Loading Sequence**: Animated loading screen on page load
-- **Floating Elements**: Parallax effect on hero section icons
+- **HTML5** - Semantic structure
+- **CSS3** - Custom properties, flexbox, grid, animations
+- **JavaScript** - Vanilla JS with dynamic page loading
+- **Font Awesome** - Icons
+- **Google Fonts** - Inter font family
 
-## 🎨 Customization
+## 🚀 Local Development
 
-### Colors
-The portfolio uses CSS custom properties for easy theme customization:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/boku-wa-abhi/Abhijeet_Anand.git
+   cd Abhijeet_Anand
+   ```
+
+2. Serve locally (requires Node.js):
+   ```bash
+   npx serve
+   ```
+
+3. Open `http://localhost:3000` in your browser
+
+## 📝 Editing Content
+
+Each section can be edited independently:
+
+| Section | File | Description |
+|---------|------|-------------|
+| About | `pages/about.html` | Introduction and focus areas |
+| Experience | `pages/experience.html` | Work history and achievements |
+| Skills | `pages/skills.html` | Technical skills by category |
+| Education | `pages/education.html` | Academic background |
+| Contact | `pages/contact.html` | Contact links and resume download |
+
+## 🎨 Customizing Theme
+
+Theme colors and design tokens are defined in `styles.css` using CSS custom properties:
 
 ```css
 :root {
-  --primary-color: #6366f1;     /* Main brand color */
-  --secondary-color: #ec4899;   /* Accent color */
-  --accent-color: #10b981;      /* Success/highlight color */
-  /* ... more variables in styles.css */
+    --accent-primary: #6c5ce7;
+    --accent-secondary: #a29bfe;
+    --bg-primary: #0f0f1a;
+    /* ... more variables */
 }
 ```
 
-### Content
-- **Personal Information**: Update in `index.html`
-- **Work Experience**: Modify experience data in `script.js` (`getExperienceData` function)
-- **Social Links**: Update URLs in `getSocialLink` function
-- **Resume**: Replace placeholder with actual resume file
-
-### Animations
-- **Timing**: Adjust animation durations in CSS variables
-- **Effects**: Modify or add new animations in `styles.css`
-- **Interactions**: Customize JavaScript behaviors in `script.js`
-
-## 📱 Browser Support
-
-- **Modern Browsers**: Chrome 80+, Firefox 75+, Safari 13+, Edge 80+
-- **Mobile**: iOS Safari 13+, Chrome Mobile 80+
-- **Features**: CSS Grid, Flexbox, Custom Properties, Intersection Observer
-
-## ♿ Accessibility
-
-- **Keyboard Navigation**: Full keyboard support for all interactive elements
-- **Screen Readers**: Semantic HTML and ARIA labels
-- **Focus Management**: Proper focus handling in modals
-- **Reduced Motion**: Respects `prefers-reduced-motion` setting
-- **High Contrast**: Supports high contrast mode
-
-## 🔧 Performance
-
-- **Optimized Animations**: Hardware-accelerated CSS transforms
-- **Throttled Events**: Scroll and resize events are throttled
-- **Efficient DOM**: Minimal DOM manipulation
-- **Lazy Loading**: Images and content loaded as needed
-
 ## 📄 License
 
-This project is created for Abhijeet Anand's personal portfolio. Feel free to use as inspiration for your own portfolio projects.
-
-## 🤝 Contributing
-
-This is a personal portfolio project. If you find bugs or have suggestions for improvements, feel free to:
-
-1. Report issues
-2. Suggest enhancements
-3. Submit pull requests
-
-## 📞 Contact
-
-For questions about this portfolio or to get in touch with Abhijeet:
-
-- **Email**: abhijeet.anand@email.com
-- **LinkedIn**: [Abhijeet Anand](https://linkedin.com/in/abhijeet-anand)
-- **GitHub**: [abhijeet-anand](https://github.com/abhijeet-anand)
-- **Wantedly**: [Abhijeet Anand](https://wantedly.com/users/abhijeet-anand)
-
----
-
-**Built with ❤️ by Abhijeet Anand**
-
-*Designed and developed with modern web technologies and a focus on user experience.*
+© 2024 Abhijeet Anand. All rights reserved.
